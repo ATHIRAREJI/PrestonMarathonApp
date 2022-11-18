@@ -1,0 +1,68 @@
+﻿<Window x:Class="PrestonMarathonApp.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrestonMarathonApp"
+        mc:Ignorable="d"
+        Title="Registration" Height="780" Width="1280" Background="Transparent" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
+
+    <Border CornerRadius="25" Padding="20" Background="#f7f6f4">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="380"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left section -->
+            <Border CornerRadius="25" Background="#F6E063" Padding="15">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock TextAlignment="Center" FontSize="28" FontWeight="SemiBold">Preston Marathon-2022</TextBlock>
+                    <Image Source="/images/1.png" Margin="0 50 0 10"></Image>
+                </StackPanel>
+            </Border>
+            <!-- Registration form-->
+            <Border Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <TextBlock HorizontalAlignment="Center"  FontWeight="Bold" FontSize="28">Registration Form</TextBlock>
+                    </StackPanel>
+                    <StackPanel  Grid.Row="1" Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="75 30 50 0">First Name</Label>
+                        <TextBox Width="700" Height="35"></TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="75 15 50 0">Second Name</Label>
+                        <TextBox Width="700" Height="40" Margin="0 0 0 0"></TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="75 15 50 0">Address</Label>
+                        <TextBox Width="700" Height="40" Margin="0 0 0 0"></TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="4" Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="75 15 50 0">Email</Label>
+                        <TextBox Width="700" Height="40" Margin="0 0 0 0"></TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="5" Orientation="Vertical">
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="75 15 50 0">Phone</Label>
+                        <TextBox Width="700" Height="40" Margin="0 0 0 0"></TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="6" Orientation="Vertical">
+                        <Button Width="100" Height="50" Style="{StaticResource buttonBlock}">
+                            <TextBlock FontSize="20" FontWeight="SemiBold" Margin="12 4 0 5">SUBMIT</TextBlock>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

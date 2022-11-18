@@ -1,0 +1,173 @@
+﻿<Window x:Class="PrestonMarathonApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="780" Width="1280" Background="Transparent" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
+
+    <Border CornerRadius="25" Padding="20" Background="#f7f6f4">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="380"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left section -->
+            <Border CornerRadius="25" Background="#F6E063" Padding="15">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Name="db"></TextBlock>
+                    <TextBlock TextAlignment="Center" FontSize="28" FontWeight="SemiBold">Preston Marathon-2022</TextBlock>
+                    <Image Source="/images/1.png" Margin="0 50 0 10"></Image>
+                </StackPanel>
+            </Border>
+
+            <!--Dashboardsection-->
+            <Border Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="180"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="180"></RowDefinition>
+                        <RowDefinition Height="180"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+
+                    <Border Grid.Row="0" Style="{StaticResource elementBoarder}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/images/u1.png" Width="80" Height="80"></Image>
+                               
+                                <StackPanel>
+                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0">Amateur Runner</TextBlock>
+                                    <!-- Registration button starts-->
+                                    <Button Name="amtr_runner" Style="{StaticResource buttonBlock}" Click="amtr_runner_Click">
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="AddressCard" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="New Registration"/></TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+
+                                <StackPanel>
+                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0"></TextBlock>
+                                    <!-- Registration button starts-->
+                                    <Button Style="{StaticResource buttonBlock}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="Eye" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="View Deatils"/></TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                                
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="1" Style="{StaticResource elementBoarder}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/images/u3.png" Width="80" Height="80"></Image>
+
+                                <StackPanel>
+                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0">Professional Runner</TextBlock>
+                                    <!-- Registration button starts-->
+                                    <Button Style="{StaticResource buttonBlock}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="User" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="New Registration"/></TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+
+                                <StackPanel>
+                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0"></TextBlock>
+                                    <!-- Registration button starts-->
+                                    <Button Style="{StaticResource buttonBlock}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="Eye" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="View Deatils"/></TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="2" Style="{StaticResource elementBoarder}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/images/u5.png" Width="80" Height="80"></Image>
+
+                                <StackPanel>
+                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0">Manage Volunteer Type</TextBlock>
+                                    <!-- Registration button starts-->
+                                    <Button Style="{StaticResource buttonBlock}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="UserOutline" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="Add volunteering info"/></TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                                
+                                <StackPanel>
+                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0"></TextBlock>
+                                    <!-- View volunteer type info button starts-->
+                                    <Button Style="{StaticResource buttonBlock}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="Eye" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="View info"/></TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="3" Style="{StaticResource elementBoarder}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/images/u1.png" Width="80" Height="80"></Image>
+
+                                <StackPanel>
+                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0">Volunteer</TextBlock>
+                                    <!-- Registration button starts-->
+                                    <Button Style="{StaticResource buttonBlock}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="UserSecret" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="New Registration"/></TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+
+                                <StackPanel>
+                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0"></TextBlock>
+                                    <!-- Registration button starts-->
+                                    <Button Style="{StaticResource buttonBlock}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <fa:ImageAwesome Icon="Eye" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="View Deatils"/></TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+
+
+
+
+
+
+                </Grid>
+            </Border>
+           
+        </Grid>
+        
+    </Border>
+    
+</Window>
