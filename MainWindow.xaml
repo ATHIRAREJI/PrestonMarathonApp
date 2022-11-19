@@ -73,7 +73,7 @@
                                 <StackPanel>
                                     <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0">Professional Runner</TextBlock>
                                     <!-- Registration button starts-->
-                                    <Button Style="{StaticResource buttonBlock}">
+                                    <Button Style="{StaticResource buttonBlock}" Click="prof_runner_Click">
                                         <StackPanel Orientation="Horizontal">
                                             <fa:ImageAwesome Icon="User" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
                                             <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="New Registration"/></TextBlock>

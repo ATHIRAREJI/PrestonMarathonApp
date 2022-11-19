@@ -41,8 +41,19 @@ namespace PrestonMarathonApp
         private void amtr_runner_Click(object sender, RoutedEventArgs e)
         {
             Registration reg = new Registration();
+            reg.formHeading.Text = "Amateur Runner - Registration Form";
             reg.Show();
             this.Close();
         }
+
+        private void prof_runner_Click(object sender, RoutedEventArgs e)
+        {
+            Registration reg = new Registration();
+            reg.formHeading.Text = "Professional Runner - Registration Form";
+            reg.Show();
+            this.Close();
+        }
+
+        
     }
 }

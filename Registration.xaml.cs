@@ -22,8 +22,20 @@ namespace PrestonMarathonApp
         public Registration()
         {
             InitializeComponent();
-            MainWindow mn = new MainWindow();
-            //test.Text = mn.amtr_runner.Tag.ToString();
+        }
+        public void SubmitRegistration(object sender, RoutedEventArgs e)
+        {
+            MarathonParticipants marathonParticipants = new MarathonParticipants();
+            marathonParticipants.particpiantFirstName = participantFirstName.Text;
+            marathonParticipants.particpiantLastName = participantLastName.Text;
+            marathonParticipants.particpiantEmail = participantEmail.Text;
+            marathonParticipants.particpiantPhone  = participantPhone.Text;
+            marathonParticipants.particpiantAddress = participantAddress.Text;
+
+            marathonParticipants.addParticipant();
+
+            MainWindow mw = new MainWindow();
+            mw.Show();
         }
     }
 }

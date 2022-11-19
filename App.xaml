@@ -37,7 +37,7 @@
                     <Setter Property="Foreground" Value="#000" />
                 </Trigger>
             </Style.Triggers>
-        </Style> buttonBlock
+        </Style> 
 
         <Style x:Key="menuButtonIcon" TargetType="fa:ImageAwesome">
             <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
