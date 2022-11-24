@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
+
 
 namespace PrestonMarathonApp
 {
@@ -22,26 +22,16 @@ namespace PrestonMarathonApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
         public MainWindow()
         {
             InitializeComponent();
-            MySqlConnection con = new MySqlConnection(constr);
-            string getAccountQuery = "SELECT id,name FROM runner where id =1";
-            MySqlCommand cmd = new MySqlCommand(getAccountQuery);
-            cmd.Connection = con;
-            con.Open();
-            MySqlDataReader data = cmd.ExecuteReader();
-            if(data.Read())
-            {
-                db.Text = data.GetString(1);
-            }
         }
        
         private void amtr_runner_Click(object sender, RoutedEventArgs e)
         {
             Registration reg = new Registration();
             reg.formHeading.Text = "Amateur Runner - Registration Form";
+            reg.participantType.Text = "1";
             reg.Show();
             this.Close();
         }
@@ -50,10 +40,24 @@ namespace PrestonMarathonApp
         {
             Registration reg = new Registration();
             reg.formHeading.Text = "Professional Runner - Registration Form";
+            reg.participantType.Text = "2";
             reg.Show();
             this.Close();
         }
 
-        
+        private void volunteer_Click(object sender, RoutedEventArgs e)
+        {
+            Registration reg = new Registration();
+            reg.formHeading.Text = "Volunteer - Registration Form";
+            reg.participantType.Text = "3";
+            reg.Show();
+            this.Close();
+        }
+
+        private void amateur_list_Click(object sender, RoutedEventArgs e)
+        {
+            AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
+            amateurRunnerList.ShowDialog();
+        }
     }
 }

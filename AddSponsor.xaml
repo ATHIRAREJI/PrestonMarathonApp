@@ -1,0 +1,20 @@
+﻿<Window x:Class="PrestonMarathonApp.AddSponsor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrestonMarathonApp"
+        mc:Ignorable="d"
+        Title="AddSponsor" Height="450" Width="800" Left="600" Top="150" WindowStartupLocation="Manual">
+    <Grid Margin="109,49,205,138">
+        <StackPanel Orientation="Vertical" Margin="0,0,0,-15">
+            <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="25">Sponsorship Details</TextBlock>
+            <Label FontSize="16">Sponsor Name</Label>
+            <TextBox x:Name="sponsorName" Height="34" FontSize="23"></TextBox>
+            <Label FontSize="16">Sponsorship Amount</Label>
+            <TextBox x:Name="Amount" Height="34" FontSize="23"></TextBox>
+            <Button Name="sponsorBtn" Height="25" Width="318" Margin="0 10 0 0" Background="#F6E063" Content="Add Sponsor" Click="sponsorBtn_Click" />
+            <TextBox Name="participantId" Visibility="Hidden"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -25,17 +25,79 @@ namespace PrestonMarathonApp
         }
         public void SubmitRegistration(object sender, RoutedEventArgs e)
         {
-            MarathonParticipants marathonParticipants = new MarathonParticipants();
-            marathonParticipants.particpiantFirstName = participantFirstName.Text;
-            marathonParticipants.particpiantLastName = participantLastName.Text;
-            marathonParticipants.particpiantEmail = participantEmail.Text;
-            marathonParticipants.particpiantPhone  = participantPhone.Text;
-            marathonParticipants.particpiantAddress = participantAddress.Text;
+            int returnStatus;
+            if(participantType.Text == "1")
+            {
+                AmateurRunner amateurRunner = new AmateurRunner();
+                amateurRunner.participantType = participantType.Text;
+                amateurRunner.particpiantFirstName = participantFirstName.Text;
+                amateurRunner.particpiantLastName = participantLastName.Text;
+                amateurRunner.particpiantEmail = participantEmail.Text;
+                amateurRunner.particpiantPhone = participantPhone.Text;
+                amateurRunner.particpiantAddress = participantAddress.Text;
+                returnStatus = amateurRunner.addParticipant();
+            }
+            else if(participantType.Text == "2")
+            {
+                ProfessionalRunner profRunner = new ProfessionalRunner();
+                profRunner.participantType = participantType.Text;
+                profRunner.particpiantFirstName = participantFirstName.Text;
+                profRunner.particpiantLastName = participantLastName.Text;
+                profRunner.particpiantEmail = participantEmail.Text;
+                profRunner.particpiantPhone = participantPhone.Text;
+                profRunner.particpiantAddress = participantAddress.Text;
+                returnStatus = profRunner.addParticipant();
+            }
+            else
+            {
+                Volunteer volunteer = new Volunteer();
+                volunteer.participantType = participantType.Text;
+                volunteer.particpiantFirstName = participantFirstName.Text;
+                volunteer.particpiantLastName = participantLastName.Text;
+                volunteer.particpiantEmail = participantEmail.Text;
+                volunteer.particpiantPhone = participantPhone.Text;
+                volunteer.particpiantAddress = participantAddress.Text;
+                returnStatus = volunteer.addParticipant();
+            }
+            
+            if (returnStatus == 1)
+            {
+                MessageBox.Show("Successfully Registered");
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sorry. Internal error occured, Try again later");
+                this.Show();               
+            }
+              
+        }
 
-            marathonParticipants.addParticipant();
-
+        private void home_btn_Click(object sender, RoutedEventArgs e)
+        {
             MainWindow mw = new MainWindow();
             mw.Show();
+            this.Close();
+        }
+
+        private void go_to_list_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (participantType.Text == "1")
+            {
+                AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
+                amateurRunnerList.Show();
+            }
+            else if(participantType.Text == "2")
+            {
+                AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
+                amateurRunnerList.Show();
+            }
+            else
+            {
+                AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
+                amateurRunnerList.Show();
+            }
         }
     }
 }

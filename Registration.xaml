@@ -35,6 +35,7 @@
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0">
                         <TextBlock  Name="formHeading" HorizontalAlignment="Center"  FontWeight="Bold" FontSize="28" ></TextBlock>
+                        <TextBlock  Name="participantType" Visibility="Hidden"></TextBlock>
                     </StackPanel>
                     <StackPanel  Grid.Row="1" Orientation="Vertical">
                         <Label FontSize="20" FontWeight="SemiBold" Margin="75 30 50 0">First Name</Label>
@@ -56,9 +57,17 @@
                         <Label FontSize="20" FontWeight="SemiBold" Margin="75 15 50 0" >Address</Label>
                         <TextBox Width="700" Height="65" Margin="0 0 0 0" FontSize="23" TextWrapping="Wrap" AcceptsReturn="True" Name="participantAddress"></TextBox>
                     </StackPanel>
-                    <StackPanel Grid.Row="6" Orientation="Vertical">
-                        <Button Width="200" Height="50" Style="{StaticResource buttonBlock}" Margin="75 15 50 0"  Click="SubmitRegistration">
-                            <TextBlock FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center">SUBMIT</TextBlock>
+                    <StackPanel Grid.Row="6" Orientation="Horizontal">
+                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="80 15 50 0" Click="home_btn_Click" >
+                            <TextBlock FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center">Go To Home</TextBlock>
+                        </Button>
+                        
+                        <Button Width="175" Height="40" Style="{StaticResource buttonBlock}" Margin="22 15 50 0"  Click="SubmitRegistration">
+                            <TextBlock FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center">Submit</TextBlock>
+                        </Button>
+
+                        <Button Name="go_to_list" Width="250" Height="40" Style="{StaticResource buttonBlock}" Margin="10 15 50 0"  Click="go_to_list_Click">
+                            <TextBlock FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center">Go to Runner List</TextBlock>
                         </Button>
                     </StackPanel>
                 </Grid>
