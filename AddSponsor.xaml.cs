@@ -27,9 +27,9 @@ namespace PrestonMarathonApp
         private void sponsorBtn_Click(object sender, RoutedEventArgs e)
         {
             AmateurRunner amateurRunner = new AmateurRunner();
-            amateurRunner.participantId = Int32.Parse(participantId.Text);
-            amateurRunner.sponsorName = sponsorName.Text;
-            amateurRunner.sponsorshipAmount = Convert.ToDouble(Amount.Text);
+            amateurRunner.ParticipantId = Int32.Parse(participantId.Text);
+            amateurRunner.SponsorName = sponsorName.Text;
+            amateurRunner.SponsorshipAmount = Convert.ToDouble(Amount.Text);
             if(amateurRunner.addSponsorDetails() == 1)
             {
                 this.Close();

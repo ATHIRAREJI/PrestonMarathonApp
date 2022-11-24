@@ -29,34 +29,34 @@ namespace PrestonMarathonApp
             if(participantType.Text == "1")
             {
                 AmateurRunner amateurRunner = new AmateurRunner();
-                amateurRunner.participantType = participantType.Text;
-                amateurRunner.particpiantFirstName = participantFirstName.Text;
-                amateurRunner.particpiantLastName = participantLastName.Text;
-                amateurRunner.particpiantEmail = participantEmail.Text;
-                amateurRunner.particpiantPhone = participantPhone.Text;
-                amateurRunner.particpiantAddress = participantAddress.Text;
+                amateurRunner.ParticipantType = participantType.Text;
+                amateurRunner.ParticpiantFirstName = participantFirstName.Text;
+                amateurRunner.ParticpiantLastName = participantLastName.Text;
+                amateurRunner.ParticpiantEmail = participantEmail.Text;
+                amateurRunner.ParticpiantPhone = participantPhone.Text;
+                amateurRunner.ParticpiantAddress = participantAddress.Text;
                 returnStatus = amateurRunner.addParticipant();
             }
             else if(participantType.Text == "2")
             {
                 ProfessionalRunner profRunner = new ProfessionalRunner();
-                profRunner.participantType = participantType.Text;
-                profRunner.particpiantFirstName = participantFirstName.Text;
-                profRunner.particpiantLastName = participantLastName.Text;
-                profRunner.particpiantEmail = participantEmail.Text;
-                profRunner.particpiantPhone = participantPhone.Text;
-                profRunner.particpiantAddress = participantAddress.Text;
+                profRunner.ParticipantType = participantType.Text;
+                profRunner.ParticpiantFirstName = participantFirstName.Text;
+                profRunner.ParticpiantLastName = participantLastName.Text;
+                profRunner.ParticpiantEmail = participantEmail.Text;
+                profRunner.ParticpiantPhone = participantPhone.Text;
+                profRunner.ParticpiantAddress = participantAddress.Text;
                 returnStatus = profRunner.addParticipant();
             }
             else
             {
                 Volunteer volunteer = new Volunteer();
-                volunteer.participantType = participantType.Text;
-                volunteer.particpiantFirstName = participantFirstName.Text;
-                volunteer.particpiantLastName = participantLastName.Text;
-                volunteer.particpiantEmail = participantEmail.Text;
-                volunteer.particpiantPhone = participantPhone.Text;
-                volunteer.particpiantAddress = participantAddress.Text;
+                volunteer.ParticipantType = participantType.Text;
+                volunteer.ParticpiantFirstName = participantFirstName.Text;
+                volunteer.ParticpiantLastName = participantLastName.Text;
+                volunteer.ParticpiantEmail = participantEmail.Text;
+                volunteer.ParticpiantPhone = participantPhone.Text;
+                volunteer.ParticpiantAddress = participantAddress.Text;
                 returnStatus = volunteer.addParticipant();
             }
             

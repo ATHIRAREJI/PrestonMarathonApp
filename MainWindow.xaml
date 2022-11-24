@@ -42,9 +42,8 @@
                                 <StackPanel>
                                     <TextBlock FontSize="25" FontWeight="Bold" Margin="25 30 10 0">Amateur Runner</TextBlock>
                                     <!-- Registration button starts-->
-                                    <Button Name="amtr_runner" Style="{StaticResource buttonBlock}" Click="amtr_runner_Click" Margin="55 10 10 0">
+                                    <Button Name="amtr_runner" Style="{StaticResource buttonBlock}" Click="amateurRunnerRegistration" Margin="55 10 10 0">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <fa:ImageAwesome Icon="AddressCard" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
                                             <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold" Text="New Registration"/>
                                         </StackPanel>
                                     </Button>
@@ -53,10 +52,9 @@
                                 <StackPanel>
                                     <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0"></TextBlock>
                                     <!-- Registration button starts-->
-                                    <Button Name="amateur_list" Style="{StaticResource buttonBlock}" Click="amateur_list_Click" Margin="55 10 10 0">
+                                    <Button Name="amateur_list" Style="{StaticResource buttonBlock}" Click="getAmateurRunnerList" Margin="55 10 10 0">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <fa:ImageAwesome Icon="Eye" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
-                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="View Deatils"/></TextBlock>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="Amateur Runner List"/></TextBlock>
                                         </StackPanel>
                                     </Button>
                                 </StackPanel>
@@ -73,9 +71,8 @@
                                 <StackPanel>
                                     <TextBlock FontSize="25" FontWeight="Bold" Margin="25 30 10 0">Professional Runner</TextBlock>
                                     <!-- Registration button starts-->
-                                    <Button Style="{StaticResource buttonBlock}" Click="prof_runner_Click" Margin="55 10 10 0">
+                                    <Button Style="{StaticResource buttonBlock}" Click="professionalRunnerRegistration" Margin="55 10 10 0">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <fa:ImageAwesome Icon="User" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
                                             <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="New Registration"/></TextBlock>
                                         </StackPanel>
                                     </Button>
@@ -84,10 +81,9 @@
                                 <StackPanel>
                                     <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0"></TextBlock>
                                     <!-- Registration button starts-->
-                                    <Button Style="{StaticResource buttonBlock}" Margin="55 10 10 0">
+                                    <Button Style="{StaticResource buttonBlock}" Margin="55 10 10 0" Click="getProfessionalRunnerList">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <fa:ImageAwesome Icon="Eye" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
-                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="View Deatils"/></TextBlock>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="Professional Runner List"/></TextBlock>
                                         </StackPanel>
                                     </Button>
                                 </StackPanel>
@@ -102,23 +98,21 @@
                                 <Image Source="/images/u5.png" Width="80" Height="80" Margin="5 23 10 0"></Image>
 
                                 <StackPanel>
-                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="25 30 10 0">Manage Volunteer Type</TextBlock>
+                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="25 30 10 0">Professional Runner</TextBlock>
                                     <!-- Registration button starts-->
-                                    <Button Style="{StaticResource buttonBlock}" Margin="0,10,10,0">
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="200">
-                                            <fa:ImageAwesome Icon="UserOutline" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
-                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold" Text="Add volunteering info"/>
+                                    <Button Style="{StaticResource buttonBlock}"  Margin="55 10 10 0">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="Add Volunteering Info"/></TextBlock>
                                         </StackPanel>
                                     </Button>
                                 </StackPanel>
-                                
+
                                 <StackPanel>
                                     <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0"></TextBlock>
                                     <!-- View volunteer type info button starts-->
-                                    <Button Style="{StaticResource buttonBlock}" Margin="5 10 10 0">
+                                    <Button Style="{StaticResource buttonBlock}" Margin="48 10 10 0">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <fa:ImageAwesome Icon="Eye" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
-                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold" Text="View info"/>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold" Text="Vounteering Info List"/>
                                         </StackPanel>
                                     </Button>
                                 </StackPanel>
@@ -136,7 +130,6 @@
                                     <!-- Registration button starts-->
                                     <Button Style="{StaticResource buttonBlock}" Click="volunteer_Click" Margin="55 10 10 0">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <fa:ImageAwesome Icon="UserSecret" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
                                             <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="New Registration"/></TextBlock>
                                         </StackPanel>
                                     </Button>
@@ -147,8 +140,7 @@
                                     <!-- Registration button starts-->
                                     <Button Style="{StaticResource buttonBlock}" Margin="55 10 10 0" >
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <fa:ImageAwesome Icon="Eye" Width="25" Height="25" Style="{StaticResource ResourceKey=menuButtonIcon}"/>
-                                            <TextBlock Style="{StaticResource menuButtonText}"  FontWeight="Bold"><Run Text="View Deatils"/></TextBlock>
+                                            <TextBlock Style="{StaticResource menuButtonText}"  FontWeight="Bold"><Run Text="Volunteer List"/></TextBlock>
                                         </StackPanel>
                                     </Button>
                                 </StackPanel>

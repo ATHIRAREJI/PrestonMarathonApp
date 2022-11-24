@@ -3,79 +3,113 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PrestonMarathonApp"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="AmateurRunnerDetails" Height="780" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="127*"/>
-            <RowDefinition Height="90*"/>
-        </Grid.RowDefinitions>
-        <Border Grid.Row="0">
-            <Grid RenderTransformOrigin="0.575,0.496">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="123*"></ColumnDefinition>
-                    <ColumnDefinition Width="77*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Border Grid.Column="0" BorderThickness="2">
-                    <StackPanel>
-                        <TextBlock>Personal Details</TextBlock>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                                <RowDefinition Height="*"></RowDefinition>
-                            </Grid.RowDefinitions>
-                            <Border Grid.Row="0">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock>Runner no:</TextBlock>
-                                    <TextBlock Name="Runnerno"></TextBlock>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="1">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock>First Name:</TextBlock>
-                                    <TextBlock></TextBlock>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="2">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock>Last Name:</TextBlock>
-                                    <TextBlock></TextBlock>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="3">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock>Email:</TextBlock>
-                                    <TextBlock></TextBlock>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="4">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock>Phone:</TextBlock>
-                                    <TextBlock></TextBlock>
-                                </StackPanel>
-                            </Border>
-                            <Border Grid.Row="5">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock>Address:</TextBlock>
-                                    <TextBlock></TextBlock>
-                                </StackPanel>
-                            </Border>
-                        </Grid>
-                    </StackPanel>
-                </Border>
-                <Border Grid.Column="1">
-                    <TextBlock>Costume Info</TextBlock>
-                </Border>
-            </Grid>
-        </Border>
-        <Border Grid.Row="1">
-            <TextBlock>Sponsor Details</TextBlock>
-        </Border>
+        Title="AmateurRunnerDetails" Height="500" Width="880" Left="530" Top="120" WindowStartupLocation="Manual">
+    <Grid Margin="15,10,10,10">
+        <Grid Margin="15,5,15,5" OpacityMask="#FF5187E5">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF192" Offset="1"/>
+                    <GradientStop Color="#FFF6E063" Offset="0.271"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0">
+                <StackPanel>
+                    <Border Grid.Column="0">
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource displayPageHeading}">RUNNER INFO</TextBlock>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource detailsPageTextBlock}">RunnerNo:</TextBlock>
+                                        <TextBlock Name="Runnerno" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="1">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource detailsPageTextBlock}">Costume:</TextBlock>
+                                        <TextBlock Name="RunnerCostume" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="2">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource detailsPageTextBlock}">Runner Status:</TextBlock>
+                                        <TextBlock Name="Status" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="3">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource detailsPageTextBlock}">First Name:</TextBlock>
+                                        <TextBlock Name="FirstName" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="4">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource detailsPageTextBlock}">Last Name:</TextBlock>
+                                        <TextBlock Name="LastName" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="5">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource detailsPageTextBlock}">Email:</TextBlock>
+                                        <TextBlock Name="Email" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="6">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource detailsPageTextBlock}">Phone:</TextBlock>
+                                        <TextBlock Name="Phone" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="7">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource detailsPageTextBlock}">Address:</TextBlock>
+                                        <TextBlock Name="Address" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border Grid.Row="8">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Style="{StaticResource detailsPageTextBlock}">Time Finished:</TextBlock>
+                                        <TextBlock Name="TimeFinished" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource displayPageHeading}">SPONSORSHIP INFO</TextBlock>
+                    <DataGrid  x:Name="SponsorshipGrid" HeadersVisibility="Column" Margin="10,20,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White"  BorderBrush="#FF528EC8">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="150" Header="Sponsor Name" Binding="{Binding SponsorName}" ></DataGridTextColumn>
+                            <DataGridTextColumn Width="205" Header="Sponsorship Amount" Binding="{Binding SponsorshipAmount}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </StackPanel>
+               
+            </Border>
+        </Grid>
+
+
 
     </Grid>
 </Window>

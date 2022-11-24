@@ -27,8 +27,8 @@ namespace PrestonMarathonApp
         private void AddCostumeDetails_Click(object sender, RoutedEventArgs e)
         {
             AmateurRunner runner = new AmateurRunner();
-            runner.participantId = Int32.Parse(participantId.Text);
-            runner.runnerCostume = costumeDetails.Text;
+            runner.ParticipantId = Int32.Parse(participantId.Text);
+            runner.RunnerCostume = costumeDetails.Text;
 
             if (runner.AddCostume() ==  1)
             {

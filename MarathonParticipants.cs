@@ -11,20 +11,20 @@ namespace PrestonMarathonApp
 
     internal class MarathonParticipants
     {
-        public int participantId { get; set; }
-        public string participantType { get; set; }
-        public string particpiantFirstName { get; set; }
-        public string particpiantLastName { get; set; }
-        public string particpiantEmail { get; set; }
-        public string particpiantPhone { get; set; }
-        public string particpiantAddress { get; set; }
+        public int ParticipantId { get; set; }
+        public string ParticipantType { get; set; }
+        public string ParticpiantFirstName { get; set; }
+        public string ParticpiantLastName { get; set; }
+        public string ParticpiantEmail { get; set; }
+        public string ParticpiantPhone { get; set; }
+        public string ParticpiantAddress { get; set; }
 
         public int addParticipant()
         {
             string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
             MySqlConnection con = new MySqlConnection(constr);
             string insertQuery = "INSERT INTO participant_info (participant_type,first_name,last_name,email,phone,address) VALUES " +
-                "('"+participantType+ "','"+particpiantFirstName+"','"+particpiantLastName+"','"+particpiantEmail+"','"+particpiantPhone+"','"+particpiantAddress+"')";
+                "('"+ParticipantType+ "','"+ParticpiantFirstName+"','"+ParticpiantLastName+"','"+ParticpiantEmail+"','"+ParticpiantPhone+"','"+ParticpiantAddress+"')";
             MySqlCommand cmd = new MySqlCommand(insertQuery);
             cmd.Connection = con;
             con.Open();

@@ -27,7 +27,7 @@ namespace PrestonMarathonApp
             InitializeComponent();
         }
        
-        private void amtr_runner_Click(object sender, RoutedEventArgs e)
+        private void amateurRunnerRegistration(object sender, RoutedEventArgs e)
         {
             Registration reg = new Registration();
             reg.formHeading.Text = "Amateur Runner - Registration Form";
@@ -36,7 +36,13 @@ namespace PrestonMarathonApp
             this.Close();
         }
 
-        private void prof_runner_Click(object sender, RoutedEventArgs e)
+        private void getAmateurRunnerList(object sender, RoutedEventArgs e)
+        {
+            AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
+            amateurRunnerList.ShowDialog();
+        }
+
+        private void professionalRunnerRegistration(object sender, RoutedEventArgs e)
         {
             Registration reg = new Registration();
             reg.formHeading.Text = "Professional Runner - Registration Form";
@@ -44,6 +50,12 @@ namespace PrestonMarathonApp
             reg.Show();
             this.Close();
         }
+        private void getProfessionalRunnerList(object sender, RoutedEventArgs e)
+        {
+           ProfessionalRunnerList professionalRunnerList = new ProfessionalRunnerList();
+            professionalRunnerList.ShowDialog();
+        }
+
 
         private void volunteer_Click(object sender, RoutedEventArgs e)
         {
@@ -52,12 +64,6 @@ namespace PrestonMarathonApp
             reg.participantType.Text = "3";
             reg.Show();
             this.Close();
-        }
-
-        private void amateur_list_Click(object sender, RoutedEventArgs e)
-        {
-            AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
-            amateurRunnerList.ShowDialog();
         }
     }
 }
