@@ -15,7 +15,7 @@ namespace PrestonMarathonApp
         public string RunnerNo { get; set; }
         public string ParticipationStatus { get; set; }
         public string TimeFinished { get; set; }
-
+        public bool IsRankAdded { get; set; }
         public int updateRunnerStatus()
         {
             string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
@@ -40,8 +40,8 @@ namespace PrestonMarathonApp
 
             string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
             MySqlConnection con = new MySqlConnection(constr);
-            string getRunnerInfo = "SELECT id,first_name,last_name,runner_rank,email,phone,address from participant_info LEFT JOIN runner_costume ON " +
-                "participant_info.id = runner_costume.runner_no where participant_info.participant_type='2' AND participant_info.id =" + ParticipantId;
+            string getRunnerInfo = "SELECT id,first_name,last_name,runner_rank,status,email,phone,address,time_finished from participant_info LEFT JOIN runner_world_rank ON " +
+                "participant_info.id = runner_world_rank.runner_no where participant_info.participant_type='2' AND participant_info.id =" + ParticipantId;
 
             MySqlCommand cmd = new MySqlCommand(getRunnerInfo);
             cmd.Connection = con;
@@ -67,6 +67,7 @@ namespace PrestonMarathonApp
                 profRunnerinfo.ParticpiantEmail = runnerInfo.GetString(5);
                 profRunnerinfo.ParticpiantPhone = runnerInfo.GetString(6);
                 profRunnerinfo.ParticpiantAddress = runnerInfo.GetString(7);
+                profRunnerinfo.TimeFinished = runnerInfo.GetString(8);
 
                 ProfessionalRunnerInfoList.Add(profRunnerinfo);
             }
@@ -98,9 +99,11 @@ namespace PrestonMarathonApp
                 if (!DBNull.Value.Equals(runnerInfo["runner_rank"]))
                 {
                     profRunnerinfo.RunnerRank = runnerInfo.GetString(4);
+                    profRunnerinfo.IsRankAdded = true;
                 }
                 else
                 {
+                    profRunnerinfo.IsRankAdded = false;
                     profRunnerinfo.RunnerRank = "Not added";
                 }
 
@@ -109,6 +112,25 @@ namespace PrestonMarathonApp
 
             return ProfessionalRunnerInfoList;
 
+        }
+
+        public int AddRunnerRank()
+        {
+            string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
+            MySqlConnection con = new MySqlConnection(constr);
+            string insertQuery = "INSERT INTO runner_rank(runner_no,runner_rank) VALUES(" + ParticipantId + ",'" + RunnerRank + "') ON DUPLICATE KEY UPDATE runner_rank ='" + RunnerRank + "' ";
+            MySqlCommand cmd = new MySqlCommand(insertQuery);
+            cmd.Connection = con;
+            con.Open();
+            int status = cmd.ExecuteNonQuery();
+            if (status > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
     }

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrestonMarathonApp"
         mc:Ignorable="d"
-        Title="AddSponsor" Height="740" Width="850"  Left="540" Top="50" WindowStartupLocation="Manual">
-    <Grid Margin="109,49,205,138">
+        Title="AddSponsor" Height="640" Width="850"  Left="540" Top="50" WindowStartupLocation="Manual">
+    <Border Margin="95,49,205,138" Background="#ffff" CornerRadius="5">
         <StackPanel Orientation="Vertical" Margin="0,0,0,-15">
             <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="25">Sponsorship Details</TextBlock>
             <Label FontSize="16">Sponsor Name</Label>
@@ -16,5 +16,5 @@
             <Button Name="sponsorBtn" Height="25" Width="318" Margin="0 10 0 0" Background="#F6E063" Content="Add Sponsor" Click="sponsorBtn_Click" />
             <TextBox Name="participantId" Visibility="Hidden"></TextBox>
         </StackPanel>
-    </Grid>
+    </Border>
 </Window>

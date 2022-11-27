@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="MainWindow" Height="780" Width="1280" Background="Transparent" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
+        Title="MainWindow" Height="780" Width="1100" Background="Transparent" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
 
     <Border CornerRadius="25" Padding="20" Background="#f7f6f4">
         <Grid>
@@ -98,9 +98,9 @@
                                 <Image Source="/images/u5.png" Width="80" Height="80" Margin="5 23 10 0"></Image>
 
                                 <StackPanel>
-                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="25 30 10 0">Professional Runner</TextBlock>
+                                    <TextBlock FontSize="25" FontWeight="Bold" Margin="25 30 10 0">Volunterring Details</TextBlock>
                                     <!-- Registration button starts-->
-                                    <Button Style="{StaticResource buttonBlock}"  Margin="55 10 10 0">
+                                    <Button Style="{StaticResource buttonBlock}" Click="AddVoluteeringInfoPageLoad" Margin="55 10 10 0">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="Add Volunteering Info"/></TextBlock>
                                         </StackPanel>
@@ -110,9 +110,9 @@
                                 <StackPanel>
                                     <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0"></TextBlock>
                                     <!-- View volunteer type info button starts-->
-                                    <Button Style="{StaticResource buttonBlock}" Margin="48 10 10 0">
+                                    <Button Style="{StaticResource buttonBlock}" Margin="48 10 10 0" Click="VolunteeringInfoListPageLoad">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold" Text="Vounteering Info List"/>
+                                            <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"  Text="Vounteering Info List"/>
                                         </StackPanel>
                                     </Button>
                                 </StackPanel>
@@ -148,13 +148,6 @@
                             </StackPanel>
                         </Grid>
                     </Border>
-
-
-
-
-
-
-
                 </Grid>
             </Border>
            

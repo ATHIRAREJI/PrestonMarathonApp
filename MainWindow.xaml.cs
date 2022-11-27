@@ -56,14 +56,31 @@ namespace PrestonMarathonApp
             professionalRunnerList.ShowDialog();
         }
 
+        //Volunteering Info Related Functions
+        private void AddVoluteeringInfoPageLoad(object sender, RoutedEventArgs e)
+        {
+            AddVolunteeringInfo addVolunteeringInfo = new AddVolunteeringInfo();
+            addVolunteeringInfo.Show();
+        }
+        private void VolunteeringInfoListPageLoad(object sender, RoutedEventArgs e)
+        {
+            VolunteeringInfoList volunteeringInfo = new VolunteeringInfoList();
 
+            volunteeringInfo.Show();
+        }
+
+        //Volunteer Related Functions
         private void volunteer_Click(object sender, RoutedEventArgs e)
         {
+            VolunteeringInfo volunteeringInfo = new VolunteeringInfo();
+            
             Registration reg = new Registration();
+
             reg.formHeading.Text = "Volunteer - Registration Form";
             reg.participantType.Text = "3";
             reg.Show();
             this.Close();
         }
+
     }
 }

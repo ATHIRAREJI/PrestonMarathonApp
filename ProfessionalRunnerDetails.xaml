@@ -3,10 +3,102 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PrestonMarathonApp"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="ProfessionalRunnerDetails" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="780" Width="1100" Background="Transparent" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
+
+    <Border CornerRadius="25" Padding="20" Background="#f7f6f4">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="380"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left section -->
+            <Border CornerRadius="25" Background="#F6E063" Padding="15">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Name="db"></TextBlock>
+                    <TextBlock TextAlignment="Center" FontSize="28" FontWeight="SemiBold">Preston Marathon-2022</TextBlock>
+                    <Image Source="/images/1.png" Margin="0 50 0 10"></Image>
+                </StackPanel>
+            </Border>
+
+            <!--Dashboardsection-->
+            <Border Grid.Column="1" Background="white" Margin="25 10 15 20" CornerRadius="10">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource displayPageHeading}">PROFESSIONAL RUNNER INFO</TextBlock>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">RunnerNo:</TextBlock>
+                                <TextBlock Name="Runnerno" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="1">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Rank:</TextBlock>
+                                <TextBlock Name="RunnerRank" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="2">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Runner Status:</TextBlock>
+                                <TextBlock Name="Status" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="3">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">First Name:</TextBlock>
+                                <TextBlock Name="FirstName" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="4">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Last Name:</TextBlock>
+                                <TextBlock Name="LastName" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="5">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Email:</TextBlock>
+                                <TextBlock Name="Email" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="6">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Phone:</TextBlock>
+                                <TextBlock Name="Phone" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="7">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Address:</TextBlock>
+                                <TextBlock Name="Address" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="8">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Time Finished:</TextBlock>
+                                <TextBlock Name="TimeFinished" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
+    </Border>
+
 </Window>

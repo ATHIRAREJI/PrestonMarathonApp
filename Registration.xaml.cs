@@ -59,18 +59,21 @@ namespace PrestonMarathonApp
                 volunteer.ParticpiantAddress = participantAddress.Text;
                 returnStatus = volunteer.addParticipant();
             }
-            
+       
             if (returnStatus == 1)
             {
+                this.participantFirstName.Text = String.Empty;
+                this.participantLastName.Text = String.Empty;
+                this.participantEmail.Text = String.Empty;
+                this.participantPhone.Text = String.Empty;
+                this.participantAddress.Text = String.Empty;
                 MessageBox.Show("Successfully Registered");
-                this.Show();
             }
             else
             {
-                MessageBox.Show("Sorry. Internal error occured, Try again later");
-                this.Show();               
+                MessageBox.Show("Sorry. Internal error occured, Try again later");             
             }
-              
+            
         }
 
         private void home_btn_Click(object sender, RoutedEventArgs e)

@@ -31,5 +31,34 @@ namespace PrestonMarathonApp
             runnerStatus.participantType.Text = "2";
             runnerStatus.Show();
         }
+        private void ViewDetails(object sender, RoutedEventArgs e)
+        {
+            var ParticipantId = (((Button)sender).Tag).ToString();
+            ProfessionalRunner professionalRunner = new ProfessionalRunner();
+            professionalRunner.ParticipantId = Int32.Parse(ParticipantId);
+            List<ProfessionalRunner> RunnerInfo = professionalRunner.getParticipantInfo();
+            ProfessionalRunnerDetails professionalRunnerDetails = new ProfessionalRunnerDetails();
+
+            foreach (ProfessionalRunner info in RunnerInfo)
+            {
+                professionalRunnerDetails.RunnerRank.Text = info.RunnerNo.ToString();
+                professionalRunnerDetails.FirstName.Text = info.ParticpiantFirstName.ToString();
+                professionalRunnerDetails.LastName.Text = info.ParticpiantLastName.ToString();
+                professionalRunnerDetails.Status.Text = info.ParticipationStatus.ToString();
+                professionalRunnerDetails.Email.Text = info.ParticpiantEmail.ToString();
+                professionalRunnerDetails.Phone.Text = info.ParticpiantPhone.ToString();
+                professionalRunnerDetails.Address.Text = info.ParticpiantAddress.ToString();
+                professionalRunnerDetails.TimeFinished.Text = info.TimeFinished.ToString();
+            }
+            
+            professionalRunnerDetails.Show();
+        }
+        private void AddRankPageLoad(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            AddRank addRank = new AddRank();
+            addRank.participantId.Text = (((Button)sender).Tag).ToString();
+            addRank.Show();
+        }
     }
 }

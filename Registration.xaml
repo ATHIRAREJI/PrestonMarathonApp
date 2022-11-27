@@ -22,7 +22,7 @@
                 </StackPanel>
             </Border>
             <!-- Registration form-->
-            <Border Grid.Column="1">
+            <Border Grid.Column="1" CornerRadius="10" Background="white" Margin="15 10 15 10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"></RowDefinition>
@@ -38,35 +38,35 @@
                         <TextBlock  Name="participantType" Visibility="Hidden"></TextBlock>
                     </StackPanel>
                     <StackPanel  Grid.Row="1" Orientation="Vertical">
-                        <Label FontSize="20" FontWeight="SemiBold" Margin="75 30 50 0">First Name</Label>
-                        <TextBox Width="700" Height="35" Name="participantFirstName"  FontSize="20"></TextBox>
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="65 30 50 0">First Name</Label>
+                        <TextBox Width="700" Height="33" Name="participantFirstName"  FontSize="18"></TextBox>
                     </StackPanel>
                     <StackPanel Grid.Row="2" Orientation="Vertical">
-                        <Label FontSize="20" FontWeight="SemiBold" Margin="75 15 50 0">Second Name</Label>
-                        <TextBox Width="700" Height="40" Margin="0 0 0 0"  FontSize="20" Name="participantLastName"></TextBox>
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="65 15 50 0">Second Name</Label>
+                        <TextBox Width="700" Height="33" Margin="0 0 0 0"  FontSize="18" Name="participantLastName"></TextBox>
                     </StackPanel>
                     <StackPanel Grid.Row="3" Orientation="Vertical">
-                        <Label FontSize="20" FontWeight="SemiBold" Margin="75 15 50 0">Email</Label>
-                        <TextBox Width="700" Height="40" Margin="0 0 0 0"  FontSize="20" Name="participantEmail"></TextBox>
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="65 15 50 0">Email</Label>
+                        <TextBox Width="700" Height="33" Margin="0 0 0 0"  FontSize="18" Name="participantEmail"></TextBox>
                     </StackPanel>
                     <StackPanel Grid.Row="4" Orientation="Vertical">
-                        <Label FontSize="20" FontWeight="SemiBold" Margin="75 15 50 0">Phone</Label>
-                        <TextBox Width="700" Height="40" Margin="0 0 0 0"  FontSize="20" Name="participantPhone"></TextBox>
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="65 15 50 0">Phone</Label>
+                        <TextBox Width="700" Height="33" Margin="0 0 0 0"  FontSize="18" Name="participantPhone"></TextBox>
                     </StackPanel>
                     <StackPanel Grid.Row="5" Orientation="Vertical">
-                        <Label FontSize="20" FontWeight="SemiBold" Margin="75 15 50 0" >Address</Label>
-                        <TextBox Width="700" Height="65" Margin="0 0 0 0" FontSize="23" TextWrapping="Wrap" AcceptsReturn="True" Name="participantAddress"></TextBox>
+                        <Label FontSize="20" FontWeight="SemiBold" Margin="65 15 50 0" >Address</Label>
+                        <TextBox Width="700" Height="75" Margin="0 0 0 0" FontSize="18" TextWrapping="Wrap" AcceptsReturn="True" Name="participantAddress"></TextBox>
                     </StackPanel>
                     <StackPanel Grid.Row="6" Orientation="Horizontal">
-                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="80 15 50 0" Click="home_btn_Click" >
+                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="70 15 50 0" Click="home_btn_Click" >
                             <TextBlock FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center">Go To Home</TextBlock>
                         </Button>
                         
-                        <Button Width="175" Height="40" Style="{StaticResource buttonBlock}" Margin="22 15 50 0"  Click="SubmitRegistration">
+                        <Button Width="175" Height="40" Style="{StaticResource buttonBlock}" Margin="18 15 50 0"  Click="SubmitRegistration">
                             <TextBlock FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center">Submit</TextBlock>
                         </Button>
 
-                        <Button Name="go_to_list" Width="250" Height="40" Style="{StaticResource buttonBlock}" Margin="10 15 50 0"  Click="go_to_list_Click">
+                        <Button Name="go_to_list" Width="250" Height="40" Style="{StaticResource buttonBlock}" Margin="5 15 50 0"  Click="go_to_list_Click">
                             <TextBlock FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center">Go to Runner List</TextBlock>
                         </Button>
                     </StackPanel>

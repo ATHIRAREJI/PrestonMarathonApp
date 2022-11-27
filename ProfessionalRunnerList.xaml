@@ -33,8 +33,6 @@
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Vertical">
                         <TextBlock FontSize="35" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">Professional Runner List</TextBlock>
-
-
                     </StackPanel>
 
                     <DataGrid  x:Name="ProfessionalRunnerListGrid" HeadersVisibility="Column" Margin="10,75,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White" Grid.RowSpan="2" BorderBrush="#FF528EC8">
@@ -48,10 +46,10 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button Name="addWorldRank"  Tag="{Binding ParticipantId}" Style="{StaticResource gridSponsorButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                            <Button Name="addWorldRank" Click="AddRankPageLoad" Tag="{Binding ParticipantId}" Style="{StaticResource gridRankButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                                                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Add Rank</TextBlock>
                                             </Button>
-                                            <Button Name="ViewDetails"  Tag="{Binding ParticipantId}" Style="{StaticResource gridViewButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                            <Button Name="ViewDetails" Click="ViewDetails"  Tag="{Binding ParticipantId}" Style="{StaticResource gridViewButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                                                 <fa:FontAwesome Icon="Eye" ToolTip="View Runner Details"/>
                                             </Button>
                                             <Button Name="update_status" Click="updateParticipantStatus"  Tag="{Binding ParticipantId}" Style="{StaticResource gridStatusButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
