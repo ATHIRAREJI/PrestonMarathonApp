@@ -51,7 +51,7 @@ namespace PrestonMarathonApp
             else
             {
                 Volunteer volunteer = new Volunteer();
-                volunteer.ParticipantType = participantType.Text;
+                volunteer.ParticipantType = volType.Text;
                 volunteer.ParticpiantFirstName = participantFirstName.Text;
                 volunteer.ParticpiantLastName = participantLastName.Text;
                 volunteer.ParticpiantEmail = participantEmail.Text;
@@ -67,6 +67,7 @@ namespace PrestonMarathonApp
                 this.participantEmail.Text = String.Empty;
                 this.participantPhone.Text = String.Empty;
                 this.participantAddress.Text = String.Empty;
+                this.volType.SelectedIndex = 0;
                 MessageBox.Show("Successfully Registered");
             }
             else

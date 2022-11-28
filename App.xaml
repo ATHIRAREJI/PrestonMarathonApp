@@ -264,7 +264,12 @@
 
         </Style>
 
-
-
+        <Style x:Key="volTypeStackPanel" TargetType="StackPanel">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding participantType}" Value="1">
+                    <Setter Property="Visibility" Value="Hidden" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

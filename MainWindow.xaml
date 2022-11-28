@@ -128,7 +128,7 @@
                                 <StackPanel>
                                     <TextBlock FontSize="25" FontWeight="Bold" Margin="25 30 10 0">Volunteer Info</TextBlock>
                                     <!-- Registration button starts-->
-                                    <Button Style="{StaticResource buttonBlock}" Click="volunteer_Click" Margin="55 10 10 0">
+                                    <Button Style="{StaticResource buttonBlock}" Click="volunteerRegistration" Margin="55 10 10 0">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <TextBlock Style="{StaticResource menuButtonText}" FontWeight="Bold"><Run Text="New Registration"/></TextBlock>
                                         </StackPanel>
@@ -138,7 +138,7 @@
                                 <StackPanel>
                                     <TextBlock FontSize="25" FontWeight="Bold" Margin="0 30 0 0"></TextBlock>
                                     <!-- Registration button starts-->
-                                    <Button Style="{StaticResource buttonBlock}" Margin="55 10 10 0" >
+                                    <Button Style="{StaticResource buttonBlock}" Margin="55 10 10 0" Click="loadVolunteerList">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <TextBlock Style="{StaticResource menuButtonText}"  FontWeight="Bold"><Run Text="Volunteer List"/></TextBlock>
                                         </StackPanel>

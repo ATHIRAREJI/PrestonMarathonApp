@@ -1,0 +1,68 @@
+﻿<Window x:Class="PrestonMarathonApp.VolunteerList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="780" Width="1280" Background="Transparent" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
+
+    <Border CornerRadius="25" Padding="20" Background="#f7f6f4">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="380"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left section -->
+            <Border CornerRadius="25" Background="#F6E063" Padding="15">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Name="db"></TextBlock>
+                    <TextBlock TextAlignment="Center" FontSize="28" FontWeight="SemiBold">Preston Marathon-2022</TextBlock>
+                    <Image Source="/images/1.png" Margin="0 50 0 10"></Image>
+                </StackPanel>
+            </Border>
+
+
+            <!--List section-->
+            <Border Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="100"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Vertical">
+                        <TextBlock FontSize="35" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">Amateur Runner List</TextBlock>
+                    </StackPanel>
+
+                    <DataGrid  x:Name="VolunteerListGrid" HeadersVisibility="Column" Margin="10,75,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White" Grid.RowSpan="2" BorderBrush="#FF528EC8">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="100" Header="ID" Binding="{Binding ParticipantId}" ></DataGridTextColumn>
+                            <DataGridTextColumn Width="150" Header="First Name" Binding="{Binding ParticpiantFirstName}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="150" Header="Last Name" Binding="{Binding ParticpiantLastName}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="150" Header="Type" Binding="{Binding ParticipantType}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Width="*" IsReadOnly="True"  Header="More operations">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Name="ViewDetails"  Tag="{Binding ParticipantId}" Style="{StaticResource gridViewButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                <fa:FontAwesome Icon="Eye" ToolTip="View Runner Details"/>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+    </Border>
+
+</Window>
