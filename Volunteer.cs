@@ -53,7 +53,7 @@ namespace PrestonMarathonApp
 
             string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
             MySqlConnection con = new MySqlConnection(constr);
-            string selectQuery = "SELECT id,first_name,last_name,volunteering_type from participant_info where participant_info.participant_type not in ('1','2')";
+            string selectQuery = "SELECT id,first_name,last_name,participant_type from participant_info where participant_info.participant_type not in ('1','2')";
             MySqlCommand cmd = new MySqlCommand(selectQuery);
             cmd.Connection = con;
             con.Open();

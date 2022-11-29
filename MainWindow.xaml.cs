@@ -27,6 +27,7 @@ namespace PrestonMarathonApp
             InitializeComponent();
         }
        
+        //Amateur Runner functionality start
         private void amateurRunnerRegistration(object sender, RoutedEventArgs e)
         {
             Registration reg = new Registration();
@@ -40,9 +41,10 @@ namespace PrestonMarathonApp
         private void getAmateurRunnerList(object sender, RoutedEventArgs e)
         {
             AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
-            amateurRunnerList.ShowDialog();
+            amateurRunnerList.Show();
+            this.Close();
         }
-
+        //Professional Runner functionality start
         private void professionalRunnerRegistration(object sender, RoutedEventArgs e)
         {
             Registration reg = new Registration();
@@ -54,8 +56,9 @@ namespace PrestonMarathonApp
         }
         private void getProfessionalRunnerList(object sender, RoutedEventArgs e)
         {
-           ProfessionalRunnerList professionalRunnerList = new ProfessionalRunnerList();
+            ProfessionalRunnerList professionalRunnerList = new ProfessionalRunnerList();
             professionalRunnerList.ShowDialog();
+            this.Close();
         }
 
         //Volunteering Info Related Functions
@@ -63,12 +66,13 @@ namespace PrestonMarathonApp
         {
             AddVolunteeringInfo addVolunteeringInfo = new AddVolunteeringInfo();
             addVolunteeringInfo.Show();
+            this.Close();
         }
         private void VolunteeringInfoListPageLoad(object sender, RoutedEventArgs e)
         {
             VolunteeringInfoList volunteeringInfo = new VolunteeringInfoList();
-
             volunteeringInfo.Show();
+            this.Close();
         }
 
         //Volunteer Related Functions
@@ -90,8 +94,7 @@ namespace PrestonMarathonApp
         {
            VolunteerList volunteerList = new VolunteerList();
            volunteerList.Show();
+           this.Close();
         }
-        
-
     }
 }

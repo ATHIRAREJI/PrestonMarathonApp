@@ -10,6 +10,9 @@
   <ItemGroup>
     <None Remove="images\1.png" />
     <None Remove="images\marathon-image-1.jpg" />
+    <None Remove="images\running-awards.jpg" />
+    <None Remove="images\seal.jpg" />
+    <None Remove="images\signature.jpg" />
     <None Remove="images\u1.png" />
     <None Remove="images\u2.png" />
     <None Remove="images\u3.png" />
@@ -22,6 +25,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\marathon-image-1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\running-awards.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\seal.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\signature.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\u1.png">

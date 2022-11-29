@@ -1,0 +1,49 @@
+﻿<Window x:Class="PrestonMarathonApp.VolunteerCertificate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrestonMarathonApp"
+        mc:Ignorable="d"
+        Title="ParticipantCertificate" Height="500" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <StackPanel Orientation="Vertical">
+                <Image Height="108" Width="160" Source="images/marathon-image-1.jpg" HorizontalAlignment="Center"/>
+                <TextBlock Width="337" Height="52" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold"><Run Text="PRESTON MARATHON-2022"/></TextBlock>
+                <TextBlock Height="29" TextWrapping="Wrap" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="20" Text="VOLUNTEER CERTIFICATE" Width="244"/>
+                <TextBlock Width="127" Padding="8" FontSize="18">Awarded to</TextBlock>
+                <TextBlock Width="135" Name="participantName" Padding="8" TextDecorations="Underline" FontSize="20"></TextBlock>
+                <TextBlock Width="226" Padding="8">Awarded on December 12th, 2022</TextBlock>
+                <Image Height="100" Width="48"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0">
+                    <StackPanel Orientation="Vertical" >
+                        <Image Source="images/signature.jpg" Height="98" Width="262"></Image>
+                        <TextBlock Margin="15 10 0 0" Height="49" Width="297" FontSize="15">President Preston Athletic Club</TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="1">
+                    <Image Source="images/seal.jpg" Margin="49,10,54,52"/>
+                </Border>
+                <Border Grid.Column="2">
+                    <StackPanel>
+                        <TextBlock FontSize="15" Margin="65 105 0 0" FontFamily="TimesNewRoman" Height="44">December 12th 2022</TextBlock>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

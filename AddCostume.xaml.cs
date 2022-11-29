@@ -32,9 +32,9 @@ namespace PrestonMarathonApp
 
             if (runner.AddCostume() ==  1)
             {
-                this.Close();
                 AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
                 amateurRunnerList.ShowDialog();
+                this.Close();
             }
             
         }

@@ -15,21 +15,13 @@ using System.Windows.Shapes;
 namespace PrestonMarathonApp
 {
     /// <summary>
-    /// Interaction logic for VolunteeringInfoList.xaml
+    /// Interaction logic for VolunteerCertificate.xaml
     /// </summary>
-    public partial class VolunteeringInfoList : Window
+    public partial class VolunteerCertificate : Window
     {
-        public VolunteeringInfoList()
+        public VolunteerCertificate()
         {
             InitializeComponent();
-            VolunteeringInfo volunteerinfo = new VolunteeringInfo();
-            VolunteeringInfoGrid.ItemsSource = volunteerinfo.getVolunteeringInfo();
-        }
-        private void home_btn_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mw = new MainWindow();
-            mw.Show();
-            this.Close();
         }
     }
 }

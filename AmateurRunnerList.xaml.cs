@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
+using System.Printing;
 
 namespace PrestonMarathonApp
 {
@@ -29,19 +30,19 @@ namespace PrestonMarathonApp
 
         private void AddCostume(object sender, RoutedEventArgs e)
         {
-            this.Close();
             var participantId = ((Button)sender).Tag;
             AddCostume costume = new AddCostume();
             costume.participantId.Text = participantId.ToString();
             costume.Show();
+            this.Close();
         }
         private void updateParticipantStatus(object sender, RoutedEventArgs e)
         {
-            this.Close();
             RunnerStatus runnerStatus = new RunnerStatus();
             runnerStatus.participantId.Text = (((Button)sender).Tag).ToString();
             runnerStatus.participantType.Text = "1";
             runnerStatus.Show();
+            this.Close();
         }
         private void AddSponsor(object sender, RoutedEventArgs e)
         {
@@ -72,6 +73,27 @@ namespace PrestonMarathonApp
             ViewDetails.SponsorshipGrid.ItemsSource = amateurRunner.getParticipantSponsorDetails();
 
             ViewDetails.Show();
+        }
+
+        private void generateCertificate(object sender, RoutedEventArgs e)
+        {
+            var ParticipantId = (((Button)sender).Tag).ToString();
+            MarathonParticipants participants = new MarathonParticipants();
+            participants.ParticipantId = Int32.Parse(ParticipantId);
+            var participantName = participants.getParticipantName();
+            
+            ParticipantCertificate participantCertificate = new ParticipantCertificate();
+            participantCertificate.participantName.Text = participantName.ToUpper();
+            participantCertificate.Show();
+            PrintDialog printDlg = new PrintDialog();
+            printDlg.PrintVisual(participantCertificate, "Window Printing.");
+        }
+
+        private void home_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
         }
     }
 }

@@ -25,7 +25,7 @@
 
 
             <!--List section-->
-            <Border Grid.Column="1">
+            <Border Grid.Column="1" Background="White" CornerRadius="10" Margin="15 10 0 0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"></RowDefinition>
@@ -33,30 +33,38 @@
                         <RowDefinition Height="100"></RowDefinition>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Vertical">
-                        <TextBlock FontSize="35" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">Amateur Runner List</TextBlock>
+                        <TextBlock FontSize="35" FontWeight="Bold" VerticalAlignment="Center" Margin="0 30 0 0" HorizontalAlignment="Center">Volunteer List</TextBlock>
                     </StackPanel>
-
-                    <DataGrid  x:Name="VolunteerListGrid" HeadersVisibility="Column" Margin="10,75,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White" Grid.RowSpan="2" BorderBrush="#FF528EC8">
+                    <Border Grid.Row="1">
+                        <DataGrid  x:Name="VolunteerListGrid" HeadersVisibility="Column" Margin="10,75,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White" Grid.RowSpan="2" BorderBrush="#FF528EC8">
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="100" Header="ID" Binding="{Binding ParticipantId}" ></DataGridTextColumn>
                             <DataGridTextColumn Width="150" Header="First Name" Binding="{Binding ParticpiantFirstName}"></DataGridTextColumn>
                             <DataGridTextColumn Width="150" Header="Last Name" Binding="{Binding ParticpiantLastName}"></DataGridTextColumn>
-                            <DataGridTextColumn Width="150" Header="Type" Binding="{Binding ParticipantType}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="150" Header="Type" Binding="{Binding VolunteeringType}"></DataGridTextColumn>
                             <DataGridTemplateColumn Width="*" IsReadOnly="True"  Header="More operations">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <Button Name="ViewDetails"  Tag="{Binding ParticipantId}" Style="{StaticResource gridViewButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                                                <fa:FontAwesome Icon="Eye" ToolTip="View Runner Details"/>
-                                            </Button>
-                                        </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Name="ViewDetails"  Tag="{Binding ParticipantId}" Style="{StaticResource gridViewButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                    <fa:FontAwesome Icon="Eye" ToolTip="View Runner Details"/>
+                                                </Button>
+                                                <Button Name="generateCertificate" Style="{StaticResource downloadCertificate}" Click="generateCertificate" Tag="{Binding ParticipantId}"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                    <fa:FontAwesome Icon="Download" ToolTip="Download Certificate"/>
+                                                </Button>
+                                            </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
                         </DataGrid.Columns>
                     </DataGrid>
-
+                    </Border>
+                    <Border Grid.Row="2">
+                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="70 5 50 0" Click="home_btn_Click" HorizontalAlignment="Right">
+                            <TextBlock FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center">Go To Home</TextBlock>
+                        </Button>
+                    </Border>
                 </Grid>
 
             </Border>

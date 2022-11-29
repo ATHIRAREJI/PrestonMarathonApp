@@ -189,6 +189,35 @@
 
         </Style>
 
+
+        <Style x:Key="downloadCertificate" TargetType="Button">
+            <Setter Property="Background" Value="red"/>
+            <Setter Property="Foreground" Value="black"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Margin" Value="5 5 5 5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6" Padding="10" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 1"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="red"></Setter>
+                    <Setter Property="Foreground" Value="black"></Setter>
+                </Trigger>
+                <DataTrigger Binding="{Binding ParticipationStatus}" Value="Not Finished">
+                    <Setter Property="Visibility" Value="Hidden" />
+                </DataTrigger>
+            </Style.Triggers>
+
+        </Style>
+        
         <Style x:Key="gridViewButton" TargetType="Button">
             <Setter Property="Background" Value="#ff80ff"/>
             <Setter Property="Foreground" Value="black"/>

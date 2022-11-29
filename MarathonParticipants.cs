@@ -39,5 +39,19 @@ namespace PrestonMarathonApp
             }
             
         }
+        public string getParticipantName()
+        {
+            string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
+            MySqlConnection con = new MySqlConnection(constr);
+            string participantInfo = "SELECT CONCAT(first_name,' ',last_name) as name from participant_info where id=" + ParticipantId;
+            MySqlCommand cmd = new MySqlCommand(participantInfo);
+            cmd.Connection = con;
+            con.Open();
+            MySqlDataReader pInfo = cmd.ExecuteReader();
+            pInfo.Read();
+            string name = pInfo["name"].ToString();
+            return name;
+
+        }
     }
 }

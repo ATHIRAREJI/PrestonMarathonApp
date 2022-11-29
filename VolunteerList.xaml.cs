@@ -22,6 +22,27 @@ namespace PrestonMarathonApp
         public VolunteerList()
         {
             InitializeComponent();
+            Volunteer volunteer = new Volunteer();
+            VolunteerListGrid.ItemsSource = volunteer.getListOfParticipants();
+        }
+        private void generateCertificate(object sender, RoutedEventArgs e)
+        {
+            var ParticipantId = (((Button)sender).Tag).ToString();
+            MarathonParticipants participants = new MarathonParticipants();
+            participants.ParticipantId = Int32.Parse(ParticipantId);
+            var participantName = participants.getParticipantName();
+
+            ParticipantCertificate participantCertificate = new ParticipantCertificate();
+            participantCertificate.participantName.Text = participantName.ToUpper();
+            participantCertificate.Show();
+            PrintDialog printDlg = new PrintDialog();
+            printDlg.PrintVisual(participantCertificate, "Window Printing.");
+        }
+        private void home_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
         }
     }
 }

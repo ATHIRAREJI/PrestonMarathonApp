@@ -38,6 +38,9 @@
                                 <DataGridTextColumn Width="135" Header="End Time" Binding="{Binding EndTime}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
+                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="70 15 50 0" Click="home_btn_Click" HorizontalAlignment="Right">
+                            <TextBlock FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center">Go To Home</TextBlock>
+                        </Button>
                     </StackPanel>
                 </Grid>
             </Border>

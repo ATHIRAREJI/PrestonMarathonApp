@@ -25,17 +25,18 @@
 
 
             <!--List section-->
-            <Border Grid.Column="1">
+            <Border Grid.Column="1" Background="White" CornerRadius="10" Margin="15 0 0 0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="100"></RowDefinition>
+                        
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Vertical">
-                        <TextBlock FontSize="35" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">Amateur Runner List</TextBlock>
+                        <TextBlock FontSize="35" FontWeight="Bold" VerticalAlignment="Center" Margin="0 50 0 0" HorizontalAlignment="Center">Amateur Runner List</TextBlock>
                     </StackPanel>
-
+                    <Border Grid.Row="1">
                     <DataGrid  x:Name="AmaterListGrid" HeadersVisibility="Column" Margin="10,75,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White" Grid.RowSpan="2" BorderBrush="#FF528EC8">
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="100" Header="RunnerNo" Binding="{Binding RunnerNo}" ></DataGridTextColumn>
@@ -43,21 +44,24 @@
                             <DataGridTextColumn Width="100" Header="Last Name" Binding="{Binding ParticpiantLastName}"></DataGridTextColumn>
                             <DataGridTextColumn Width="90" Header="Status" Binding="{Binding ParticipationStatus}"></DataGridTextColumn>
                             <DataGridTextColumn Width="120" Header="Costume" Binding="{Binding RunnerCostume}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Width="*" IsReadOnly="True"  Header="More operations">
+                            <DataGridTemplateColumn Width="285" IsReadOnly="True"  Header="More operations">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
                                             <Button Name="add_sponsor" Click="AddSponsor" Tag="{Binding ParticipantId}" Style="{StaticResource gridSponsorButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Add Sponsor</TextBlock>
+                                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sponsor</TextBlock>
                                             </Button>
                                             <Button Name="add_costume" Tag="{Binding ParticipantId}" Click="AddCostume" Style="{StaticResource gridCostumeButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Add Costume</TextBlock>
+                                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Costume</TextBlock>
+                                            </Button>
+                                            <Button Name="update_status" Click="updateParticipantStatus" Tag="{Binding ParticipantId}" Style="{StaticResource gridStatusButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                <fa:FontAwesome Icon="FlagCheckered" ToolTip="Update runner status"/>
                                             </Button>
                                             <Button Name="ViewDetails" Click="ViewDetails" Tag="{Binding ParticipantId}" Style="{StaticResource gridViewButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                                                 <fa:FontAwesome Icon="Eye" ToolTip="View Runner Details"/>
                                             </Button>
-                                            <Button Name="update_status" Click="updateParticipantStatus" Tag="{Binding ParticipantId}" Style="{StaticResource gridStatusButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-                                                <fa:FontAwesome Icon="FlagCheckered" ToolTip="Update runner status"/>
+                                            <Button Name="generateCertificate" Style="{StaticResource downloadCertificate}" Click="generateCertificate" Tag="{Binding ParticipantId}"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                <fa:FontAwesome Icon="Download" ToolTip="Download Certificate"/>
                                             </Button>
                                         </StackPanel>
                                         
@@ -67,9 +71,14 @@
 
                         </DataGrid.Columns>
                     </DataGrid>
-
+                    </Border>
+                    <Border Grid.Row="2" HorizontalAlignment="Right">
+                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="70 15 50 0" Click="home_btn_Click" >
+                            <TextBlock FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center">Go To Home</TextBlock>
+                        </Button>
+                    </Border>
                 </Grid>
-
+                
             </Border>
 
         </Grid>
