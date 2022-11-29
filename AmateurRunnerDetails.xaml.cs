@@ -23,5 +23,12 @@ namespace PrestonMarathonApp
         {
             InitializeComponent();
         }
+        private void amaterurListing(object sender, RoutedEventArgs e)
+        {
+            AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
+            amateurRunnerList.Show();
+            this.Close();
+        }
+            
     }
 }

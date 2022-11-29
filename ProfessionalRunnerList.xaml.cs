@@ -25,11 +25,11 @@ namespace PrestonMarathonApp
 
         private void updateParticipantStatus(object sender, RoutedEventArgs e)
         {
-            this.Close();
             RunnerStatus runnerStatus = new RunnerStatus();
             runnerStatus.participantId.Text = (((Button)sender).Tag).ToString();
             runnerStatus.participantType.Text = "2";
             runnerStatus.Show();
+            this.Close();
         }
         private void ViewDetails(object sender, RoutedEventArgs e)
         {
@@ -55,10 +55,10 @@ namespace PrestonMarathonApp
         }
         private void AddRankPageLoad(object sender, RoutedEventArgs e)
         {
-            this.Close();
             AddRank addRank = new AddRank();
             addRank.participantId.Text = (((Button)sender).Tag).ToString();
             addRank.Show();
+            this.Close();
         }
 
         private void generateCertificate(object sender, RoutedEventArgs e)

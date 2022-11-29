@@ -36,9 +36,9 @@ namespace PrestonMarathonApp
 
                 if (amateurRunner.updateRunnerStatus() == 1)
                 {
-                    this.Close();
                     AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
-                    amateurRunnerList.ShowDialog();
+                    amateurRunnerList.Show();
+                    this.Close();
                 }
             }
             else
@@ -49,9 +49,9 @@ namespace PrestonMarathonApp
                 professionalRunner.TimeFinished = TimeFinished.Text;
                 if (professionalRunner.updateRunnerStatus() == 1)
                 {
-                    this.Close();
                     ProfessionalRunnerList profRunnerList = new ProfessionalRunnerList();
-                    profRunnerList.ShowDialog();
+                    profRunnerList.Show();
+                    this.Close();
                 }
             }
             

@@ -132,7 +132,7 @@
 
         
         <Style x:Key="gridCostumeButton" TargetType="Button">
-            <Setter Property="Background" Value="Red"/>
+            <Setter Property="Background" Value="#EF8090"/>
             <Setter Property="Foreground" Value="#ffff"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -149,7 +149,7 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Red"></Setter>
+                    <Setter Property="Background" Value="#EF8090"></Setter>
                     <Setter Property="Foreground" Value="#ffff"></Setter>
                 </Trigger>
                 <DataTrigger Binding="{Binding ParticipationStatus}" Value="Finished">
@@ -162,7 +162,7 @@
 
 
         <Style x:Key="gridStatusButton" TargetType="Button">
-            <Setter Property="Background" Value="#33ff77"/>
+            <Setter Property="Background" Value="#8AC58B"/>
             <Setter Property="Foreground" Value="black"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -179,7 +179,7 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#33ff77"></Setter>
+                    <Setter Property="Background" Value="#8AC58B"></Setter>
                     <Setter Property="Foreground" Value="black"></Setter>
                 </Trigger>
                 <DataTrigger Binding="{Binding ParticipationStatus}" Value="Finished">

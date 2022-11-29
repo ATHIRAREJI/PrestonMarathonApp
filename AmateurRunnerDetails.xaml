@@ -5,22 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="AmateurRunnerDetails" Height="500" Width="880" Left="530" Top="120" WindowStartupLocation="Manual">
-    <Grid Margin="15,10,10,10">
-        <Grid Margin="15,5,15,5" OpacityMask="#FF5187E5">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFF192" Offset="1"/>
-                    <GradientStop Color="#FFF6E063" Offset="0.271"/>
-                </LinearGradientBrush>
-            </Grid.Background>
+        Title="MainWindow" Height="780" Width="1150" Background="Transparent" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
+
+    <Border CornerRadius="25" Padding="20" Background="#f7f6f4">
+        <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="380"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="0">
-                <StackPanel>
-                    <Border Grid.Column="0">
+
+            <!-- Left section -->
+            <Border CornerRadius="25" Background="#F6E063" Padding="15">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Name="db"></TextBlock>
+                    <TextBlock TextAlignment="Center" FontSize="28" FontWeight="SemiBold">Preston Marathon-2022</TextBlock>
+                    <Image Source="/images/1.png" Margin="0 50 0 10"></Image>
+                </StackPanel>
+            </Border>
+
+            <!--Dashboardsection-->
+            <Border Grid.Column="1" Background="white" CornerRadius="8" Margin="25 10 10 20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" CornerRadius="20" Margin="20 20 20 10">
                         <StackPanel>
                             <TextBlock Style="{StaticResource displayPageHeading}">RUNNER INFO</TextBlock>
                             <Grid>
@@ -92,24 +103,28 @@
                             </Grid>
                         </StackPanel>
                     </Border>
-                </StackPanel>
-            </Border>
-            <Border Grid.Column="1">
-                <StackPanel>
-                    <TextBlock Style="{StaticResource displayPageHeading}">SPONSORSHIP INFO</TextBlock>
-                    <DataGrid  x:Name="SponsorshipGrid" HeadersVisibility="Column" Margin="10,20,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White"  BorderBrush="#FF528EC8">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Width="150" Header="Sponsor Name" Binding="{Binding SponsorName}" ></DataGridTextColumn>
-                            <DataGridTextColumn Width="205" Header="Sponsorship Amount" Binding="{Binding SponsorshipAmount}"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <Border Grid.Row="1" Margin="20 0 0 0">
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource displayPageHeading}">SPONSORSHIP INFO</TextBlock>
+                            <DataGrid  x:Name="SponsorshipGrid" HeadersVisibility="Column" Margin="10,15,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White"  BorderBrush="#FF528EC8">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Width="*" Header="Sponsor Name" Binding="{Binding SponsorName}" ></DataGridTextColumn>
+                                    <DataGridTextColumn Width="*" Header="Sponsorship Amount" Binding="{Binding SponsorshipAmount}"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
 
-                </StackPanel>
-
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="2" HorizontalAlignment="Right">
+                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="70 0 50 0" Click="amaterurListing" >
+                            <TextBlock FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center">Back to List</TextBlock>
+                        </Button>
+                    </Border>
+                </Grid>
             </Border>
+
         </Grid>
 
+    </Border>
 
-
-    </Grid>
 </Window>

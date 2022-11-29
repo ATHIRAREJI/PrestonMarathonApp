@@ -50,6 +50,7 @@ namespace PrestonMarathonApp
             AddSponsor sponsor = new AddSponsor();
             sponsor.participantId.Text = participantId.ToString();
             sponsor.Show();
+            this.Close();
         }
         private void ViewDetails(object sender, RoutedEventArgs e)
         {
@@ -73,6 +74,7 @@ namespace PrestonMarathonApp
             ViewDetails.SponsorshipGrid.ItemsSource = amateurRunner.getParticipantSponsorDetails();
 
             ViewDetails.Show();
+            this.Close();
         }
 
         private void generateCertificate(object sender, RoutedEventArgs e)
