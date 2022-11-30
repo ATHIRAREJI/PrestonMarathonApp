@@ -32,11 +32,11 @@ namespace PrestonMarathonApp
             participants.ParticipantId = Int32.Parse(ParticipantId);
             var participantName = participants.getParticipantName();
 
-            ParticipantCertificate participantCertificate = new ParticipantCertificate();
-            participantCertificate.participantName.Text = participantName.ToUpper();
-            participantCertificate.Show();
+            VolunteerCertificate volunteerCertificate = new VolunteerCertificate();
+            volunteerCertificate.participantName.Text = participantName.ToUpper();
+            volunteerCertificate.Show();
             PrintDialog printDlg = new PrintDialog();
-            printDlg.PrintVisual(participantCertificate, "Window Printing.");
+            printDlg.PrintVisual(volunteerCertificate, "Window Printing.");
         }
         private void home_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -44,5 +44,29 @@ namespace PrestonMarathonApp
             mw.Show();
             this.Close();
         }
+        private void viewDetail(object sender, RoutedEventArgs e)
+        {
+            var ParticipantId = (((Button)sender).Tag).ToString();
+            Volunteer volunteer = new Volunteer();
+            volunteer.ParticipantId = Int32.Parse(ParticipantId);
+            List<Volunteer> volunteerInfo = volunteer.getParticipantInfo();
+            VolunteerDetails volunteerDetails = new VolunteerDetails();
+            foreach (Volunteer volInfo in volunteerInfo)
+            {
+                volunteerDetails.VolunteerNo.Text = volInfo.ParticipantId.ToString();
+                volunteerDetails.FirstName.Text = volInfo.ParticpiantFirstName.ToString();
+                volunteerDetails.LastName.Text = volInfo.ParticpiantLastName.ToString();
+                volunteerDetails.Email.Text = volInfo.ParticpiantEmail.ToString();
+                volunteerDetails.Phone.Text = volInfo.ParticpiantPhone.ToString();
+                volunteerDetails.Address.Text = volInfo.ParticpiantAddress.ToString();
+                volunteerDetails.VolType.Text = volInfo.VolunteeringType.ToString();
+                volunteerDetails.StartTime.Text = volInfo.StartTime.ToString();
+                volunteerDetails.EndTime.Text = volInfo.EndTime.ToString();
+            }
+            volunteerDetails.Show();
+            this.Close();
+        }
+
+
     }
 }

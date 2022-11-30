@@ -42,5 +42,12 @@ namespace PrestonMarathonApp
                 MessageBox.Show("Sorry. Internal error occured, Try again later");
             }
         }
+
+        private void backToHome(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();   
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

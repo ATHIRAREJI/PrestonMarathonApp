@@ -25,11 +25,11 @@
 
             <!--Dashboardsection-->
             <Border Grid.Column="1" Background="white" CornerRadius="10" Margin="25 10 25 50">
-                <StackPanel Margin="30 30 20 10" >
-                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="20">Runner's World Rank</TextBlock>
+                <StackPanel Margin="30 65 20 10" >
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="25">Runner's World Rank</TextBlock>
                     <Label FontSize="20">Runner's Rank</Label>
                     <TextBox  Name="RunnerRank" Margin="0 5 15 5 " Height="25" FontSize="20" ></TextBox>
-                    <Button  Margin="0 5 0 0" Background="#F6E063" Name="AddCostumeDetails" Click="AddRunnerRank" Height="30" FontSize="19" Width="249" >Add </Button>
+                    <Button  Margin="0 20 0 0" Background="#F6E063" Name="AddCostumeDetails" Click="AddRunnerRank" Height="34" FontSize="19" Width="249" >Add </Button>
                     <TextBox  Name="participantId" Visibility="Hidden"></TextBox>
                 </StackPanel>
             </Border>

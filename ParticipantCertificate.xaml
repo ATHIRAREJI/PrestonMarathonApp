@@ -12,12 +12,12 @@
             <RowDefinition Height="200"></RowDefinition>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
-            <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <Image Height="108" Width="160" Source="images/marathon-image-1.jpg" HorizontalAlignment="Center"/>
                 <TextBlock Width="337" Height="52" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold"><Run Text="PRESTON MARATHON-2022"/></TextBlock>
                 <TextBlock Height="29" TextWrapping="Wrap" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="20" Text="RUNNER CERTIFICATE" Width="210"/>
-                <TextBlock Width="127" Padding="8" FontSize="18">Awarded to</TextBlock>
-                <TextBlock Width="135" Name="participantName" Padding="8" TextDecorations="Underline" FontSize="20"></TextBlock>
+                <TextBlock Width="125" Padding="8" FontSize="18" HorizontalAlignment="Center">Awarded to</TextBlock>
+                <TextBlock Width="135" Name="participantName" Margin="0 0 20 0" Padding="5" HorizontalAlignment="Center" TextDecorations="Underline" FontSize="20"></TextBlock>
                 <TextBlock Width="226" Padding="8">Awarded on December 12th, 2022</TextBlock>
                 <Image Height="100" Width="48"/>
             </StackPanel>

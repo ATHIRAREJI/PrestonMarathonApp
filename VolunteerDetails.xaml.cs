@@ -15,19 +15,19 @@ using System.Windows.Shapes;
 namespace PrestonMarathonApp
 {
     /// <summary>
-    /// Interaction logic for ProfessionalRunnerDetails.xaml
+    /// Interaction logic for VolunteerDetails.xaml
     /// </summary>
-    public partial class ProfessionalRunnerDetails : Window
+    public partial class VolunteerDetails : Window
     {
-        public ProfessionalRunnerDetails()
+        public VolunteerDetails()
         {
             InitializeComponent();
         }
         private void backtoList(object sender, RoutedEventArgs e)
         {
-           ProfessionalRunnerList professionalRunnerList = new ProfessionalRunnerList();
-           professionalRunnerList.Show();
-           this.Close();
+            VolunteerList volunteerList = new VolunteerList();
+            volunteerList.Show();
+            this.Close();
         }
     }
 }

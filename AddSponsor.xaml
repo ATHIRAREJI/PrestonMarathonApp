@@ -33,6 +33,9 @@
                     <TextBox x:Name="Amount" Height="34" FontSize="23"></TextBox>
                     <Button Name="sponsorBtn" Height="35" Width="318" Margin="0 10 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#F6E063" Content="Add Sponsor" Click="sponsorBtn_Click" />
                     <TextBox Name="participantId" Visibility="Hidden"></TextBox>
+                    <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="70 200 50 0" Click="amaterurListing" HorizontalAlignment="Right" >
+                        <TextBlock FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center">Back to List</TextBlock>
+                    </Button>
                 </StackPanel>
             </Border>
 

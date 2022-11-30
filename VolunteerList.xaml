@@ -33,7 +33,7 @@
                         <RowDefinition Height="100"></RowDefinition>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Vertical">
-                        <TextBlock FontSize="35" FontWeight="Bold" VerticalAlignment="Center" Margin="0 30 0 0" HorizontalAlignment="Center">Volunteer List</TextBlock>
+                        <TextBlock FontSize="35" FontWeight="Bold" VerticalAlignment="Center" Margin="0 55 0 0" HorizontalAlignment="Center">Volunteer List</TextBlock>
                     </StackPanel>
                     <Border Grid.Row="1">
                         <DataGrid  x:Name="VolunteerListGrid" HeadersVisibility="Column" Margin="10,75,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White" Grid.RowSpan="2" BorderBrush="#FF528EC8">
@@ -46,7 +46,7 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <Button Name="ViewDetails"  Tag="{Binding ParticipantId}" Style="{StaticResource gridViewButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                                <Button Name="ViewDetails" Click="viewDetail"  Tag="{Binding ParticipantId}" Style="{StaticResource gridViewButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                                                     <fa:FontAwesome Icon="Eye" ToolTip="View Runner Details"/>
                                                 </Button>
                                                 <Button Name="generateCertificate" Style="{StaticResource downloadCertificate}" Click="generateCertificate" Tag="{Binding ParticipantId}"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">

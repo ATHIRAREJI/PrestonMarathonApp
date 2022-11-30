@@ -91,16 +91,19 @@ namespace PrestonMarathonApp
             {
                 AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
                 amateurRunnerList.Show();
+                this.Close();
             }
             else if(participantType.Text == "2")
             {
                 ProfessionalRunnerList profRunnerList = new ProfessionalRunnerList();
                 profRunnerList.Show();
+                this.Close();
             }
             else
             {
                 VolunteerList volunteerList = new VolunteerList();
                 volunteerList.Show();
+                this.Close();
             }
         }
     }

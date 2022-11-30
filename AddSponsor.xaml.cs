@@ -32,9 +32,14 @@ namespace PrestonMarathonApp
             amateurRunner.SponsorshipAmount = Convert.ToDouble(Amount.Text);
             if(amateurRunner.addSponsorDetails() == 1)
             {
-                this.Close();
                 MessageBox.Show("Sponsor details has been added successfully");
             }
+        }
+        private void amaterurListing(object sender, RoutedEventArgs e)
+        {
+            AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
+            amateurRunnerList.Show();
+            this.Close();
         }
     }
 }

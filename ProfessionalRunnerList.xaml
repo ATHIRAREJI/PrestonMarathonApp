@@ -24,7 +24,7 @@
             </Border>
 
             <!--List section-->
-            <Border Grid.Column="1">
+            <Border Grid.Column="1" Background="white" CornerRadius="10" Margin="15 0 0 0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"></RowDefinition>
@@ -32,10 +32,10 @@
                         <RowDefinition Height="100"></RowDefinition>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Vertical">
-                        <TextBlock FontSize="35" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">Professional Runner List</TextBlock>
+                        <TextBlock FontSize="35" Margin="0 45 0 0" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">Professional Runner List</TextBlock>
                     </StackPanel>
                     <Border Grid.Row="1">
-                        <DataGrid  x:Name="ProfessionalRunnerListGrid" HeadersVisibility="Column" Margin="10,75,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White" Grid.RowSpan="2" BorderBrush="#FF528EC8">
+                        <DataGrid  x:Name="ProfessionalRunnerListGrid" HeadersVisibility="Column" Margin="20,75,38,94" AutoGenerateColumns="false" CanUserAddRows="False"  Background="White" Grid.RowSpan="2" BorderBrush="#FF528EC8">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Width="100" Header="RunnerNo" Binding="{Binding RunnerNo}" ></DataGridTextColumn>
                                 <DataGridTextColumn Width="100" Header="First Name" Binding="{Binding ParticpiantFirstName}"></DataGridTextColumn>
@@ -70,7 +70,7 @@
 
                     <Border Grid.Row="2" HorizontalAlignment="Right">
                         <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="70 15 50 0" Click="home_btn_Click" >
-                            <TextBlock FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center">Go To Home</TextBlock>
+                            <TextBlock FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center">Home</TextBlock>
                         </Button>
                     </Border>
                 </Grid>

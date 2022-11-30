@@ -41,7 +41,8 @@ namespace PrestonMarathonApp
 
             foreach (ProfessionalRunner info in RunnerInfo)
             {
-                professionalRunnerDetails.RunnerRank.Text = info.RunnerNo.ToString();
+                professionalRunnerDetails.Runnerno.Text = info.RunnerNo.ToString();
+                professionalRunnerDetails.RunnerRank.Text = info.RunnerRank.ToString();
                 professionalRunnerDetails.FirstName.Text = info.ParticpiantFirstName.ToString();
                 professionalRunnerDetails.LastName.Text = info.ParticpiantLastName.ToString();
                 professionalRunnerDetails.Status.Text = info.ParticipationStatus.ToString();
@@ -50,8 +51,8 @@ namespace PrestonMarathonApp
                 professionalRunnerDetails.Address.Text = info.ParticpiantAddress.ToString();
                 professionalRunnerDetails.TimeFinished.Text = info.TimeFinished.ToString();
             }
-            
             professionalRunnerDetails.Show();
+            this.Close();
         }
         private void AddRankPageLoad(object sender, RoutedEventArgs e)
         {

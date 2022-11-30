@@ -1,4 +1,4 @@
-﻿<Window x:Class="PrestonMarathonApp.ProfessionalRunnerDetails"
+﻿<Window x:Class="PrestonMarathonApp.VolunteerDetails"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -42,56 +42,56 @@
                         </Grid.RowDefinitions>
                         <Border Grid.Row="0" Padding="8">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource detailsPageTextBlock}">RunnerNo:</TextBlock>
-                                <TextBlock Name="Runnerno" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">VolunteerNo:</TextBlock>
+                                <TextBlock Name="VolunteerNo" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
                             </StackPanel>
                         </Border>
                         <Border Grid.Row="1" Padding="5">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Rank:</TextBlock>
-                                <TextBlock Name="RunnerRank" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
-                            </StackPanel>
-                        </Border>
-                        <Border Grid.Row="2" Padding="5">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Runner Status:</TextBlock>
-                                <TextBlock Name="Status" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
-                            </StackPanel>
-                        </Border>
-                        <Border Grid.Row="3" Padding="5">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Style="{StaticResource detailsPageTextBlock}">First Name:</TextBlock>
                                 <TextBlock Name="FirstName" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
                             </StackPanel>
                         </Border>
-                        <Border Grid.Row="4" Padding="5">
+                        <Border Grid.Row="2" Padding="5">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Style="{StaticResource detailsPageTextBlock}">Last Name:</TextBlock>
                                 <TextBlock Name="LastName" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
                             </StackPanel>
                         </Border>
-                        <Border Grid.Row="5" Padding="5">
+                        <Border Grid.Row="3" Padding="5">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Style="{StaticResource detailsPageTextBlock}">Email:</TextBlock>
                                 <TextBlock Name="Email" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
                             </StackPanel>
                         </Border>
-                        <Border Grid.Row="6" Padding="5">
+                        <Border Grid.Row="4" Padding="5">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Style="{StaticResource detailsPageTextBlock}">Phone:</TextBlock>
                                 <TextBlock Name="Phone" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
                             </StackPanel>
                         </Border>
-                        <Border Grid.Row="7" Padding="5">
+                        <Border Grid.Row="5" Padding="5">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Style="{StaticResource detailsPageTextBlock}">Address:</TextBlock>
                                 <TextBlock Name="Address" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
                             </StackPanel>
                         </Border>
+                        <Border Grid.Row="6" Padding="5">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Type:</TextBlock>
+                                <TextBlock Name="VolType" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="7" Padding="5">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Start Time:</TextBlock>
+                                <TextBlock Name="StartTime" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                            </StackPanel>
+                        </Border>
                         <Border Grid.Row="8" Padding="5">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource detailsPageTextBlock}">Time Finished:</TextBlock>
-                                <TextBlock Name="TimeFinished" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
+                                <TextBlock Style="{StaticResource detailsPageTextBlock}">End Time:</TextBlock>
+                                <TextBlock Name="EndTime" Style="{StaticResource detailsPageTextBlock}"></TextBlock>
                             </StackPanel>
                         </Border>
                         <Border Grid.Row="9" Padding="5">

@@ -30,13 +30,13 @@ namespace PrestonMarathonApp
             professionalRunner.RunnerRank = RunnerRank.Text;
             if(professionalRunner.AddRunnerRank() == 1)
             {
-                this.Close();
                 ProfessionalRunnerList professionalRunnerList = new ProfessionalRunnerList();
                 professionalRunnerList.Show();
+                this.Close();
             }
             else
             {
-
+                MessageBox.Show("Error occured. Please try again later");
             }
         }
     }
