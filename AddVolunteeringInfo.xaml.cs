@@ -13,23 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
-{
-    /// <summary>
-    /// Interaction logic for AddVolunteeringInfo.xaml
-    /// </summary>
+{   
+    /**
+     * Interaction logic for AddVolunteeringInfo.xaml
+     */
     public partial class AddVolunteeringInfo : Window
     {
         public AddVolunteeringInfo()
         {
             InitializeComponent();
         }
+
+        //Function to add volunteering info details
         private void addVolunteeringInfo(object sender, RoutedEventArgs e)
         {
             VolunteeringInfo volunteeringInfo = new VolunteeringInfo();
             volunteeringInfo.VolunteeringType = VolunteeringType.Text;
             volunteeringInfo.StartTime = StartTime.Text;
             volunteeringInfo.EndTime = EndTime.Text;
-            if(volunteeringInfo.AddVolunteeringInfo() == 1)
+            if(volunteeringInfo.addVolunteeringInfo() == 1)
             {
                 this.VolunteeringType.Text = String.Empty;
                 this.StartTime.SelectedIndex = 0;
@@ -43,7 +45,8 @@ namespace PrestonMarathonApp
             }
         }
 
-        private void backToHome(object sender, RoutedEventArgs e)
+        //Function to load home window
+        private void backToHomeBtnClick(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();   
             mainWindow.Show();

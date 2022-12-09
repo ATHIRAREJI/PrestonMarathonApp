@@ -14,18 +14,22 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for Registration.xaml
-    /// </summary>
+    /**
+     * Interaction logic for Registration.xaml
+     */
     public partial class Registration : Window
     {
         public Registration()
         {
             InitializeComponent();
         }
-        public void SubmitRegistration(object sender, RoutedEventArgs e)
+
+        //Function to submit participant registration
+        public void submitRegistration(object sender, RoutedEventArgs e)
         {
             int returnStatus;
+
+            //Save amateur runner registartion details
             if(participantType.Text == "1")
             {
                 AmateurRunner amateurRunner = new AmateurRunner();
@@ -37,6 +41,7 @@ namespace PrestonMarathonApp
                 amateurRunner.ParticpiantAddress = participantAddress.Text;
                 returnStatus = amateurRunner.addParticipant();
             }
+            //Save professional runner registration details
             else if(participantType.Text == "2")
             {
                 ProfessionalRunner profRunner = new ProfessionalRunner();
@@ -48,6 +53,7 @@ namespace PrestonMarathonApp
                 profRunner.ParticpiantAddress = participantAddress.Text;
                 returnStatus = profRunner.addParticipant();
             }
+            //Save volunteer registration details.
             else
             {
                 Volunteer volunteer = new Volunteer();
@@ -77,14 +83,16 @@ namespace PrestonMarathonApp
             
         }
 
-        private void home_btn_Click(object sender, RoutedEventArgs e)
+        //Function to load home window
+        private void homeBtnClick(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
             mw.Show();
             this.Close();
         }
 
-        private void go_to_list_Click(object sender, RoutedEventArgs e)
+        //Function to load participant listing window
+        private void loadListing(object sender, RoutedEventArgs e)
         {
 
             if (participantType.Text == "1")

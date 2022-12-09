@@ -16,9 +16,9 @@ using System.Printing;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for AmateurRunnerList.xaml
-    /// </summary>
+    /**
+     * Interaction logic for AmateurRunnerList.xaml
+     */
     public partial class AmateurRunnerList : Window
     {
         public AmateurRunnerList()
@@ -28,7 +28,8 @@ namespace PrestonMarathonApp
             AmaterListGrid.ItemsSource= amateurRunner.getListOfParticipants();
         }
 
-        private void AddCostume(object sender, RoutedEventArgs e)
+        //Function to load AddCostume window
+        private void addCostume(object sender, RoutedEventArgs e)
         {
             var participantId = ((Button)sender).Tag;
             AddCostume costume = new AddCostume();
@@ -36,6 +37,8 @@ namespace PrestonMarathonApp
             costume.Show();
             this.Close();
         }
+
+        //Function to update amateur runner's status to finished
         private void updateParticipantStatus(object sender, RoutedEventArgs e)
         {
             RunnerStatus runnerStatus = new RunnerStatus();
@@ -44,7 +47,9 @@ namespace PrestonMarathonApp
             runnerStatus.Show();
             this.Close();
         }
-        private void AddSponsor(object sender, RoutedEventArgs e)
+
+        //Function to load Addsponsor window
+        private void addSponsor(object sender, RoutedEventArgs e)
         {
             var participantId = ((Button)sender).Tag;
             AddSponsor sponsor = new AddSponsor();
@@ -52,7 +57,9 @@ namespace PrestonMarathonApp
             sponsor.Show();
             this.Close();
         }
-        private void ViewDetails(object sender, RoutedEventArgs e)
+
+        //Function to load amateur runner details window
+        private void viewDetails(object sender, RoutedEventArgs e)
         {
             var ParticipantId = (((Button)sender).Tag).ToString();
             AmateurRunner amateurRunner = new AmateurRunner();
@@ -76,7 +83,7 @@ namespace PrestonMarathonApp
             ViewDetails.Show();
             this.Close();
         }
-
+        //Function to load certificate window and functionality to save certificate automatically. 
         private void generateCertificate(object sender, RoutedEventArgs e)
         {
             var ParticipantId = (((Button)sender).Tag).ToString();
@@ -91,7 +98,8 @@ namespace PrestonMarathonApp
             printDlg.PrintVisual(participantCertificate, "Window Printing.");
         }
 
-        private void home_btn_Click(object sender, RoutedEventArgs e)
+        //Function to load home window
+        private void homeBtnClick(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
             mw.Show();

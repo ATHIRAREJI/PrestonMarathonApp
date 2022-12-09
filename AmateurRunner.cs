@@ -8,6 +8,10 @@ using MySql.Data.MySqlClient;
 
 namespace PrestonMarathonApp
 {
+    /**
+     * AmateurRunner class consist of all property and methods related to the amateur runners. 
+     * And also it inherits the properities and methods of it's parent class - MarathonParticipants. 
+     */
     internal class AmateurRunner: MarathonParticipants, ICostume, IFetchParticipantInfo<AmateurRunner>, IRunnerStatus
     {
         public string RunnerCostume { get; set; }
@@ -16,61 +20,88 @@ namespace PrestonMarathonApp
         public string SponsorName { get; set; }
         public double SponsorshipAmount { get; set; }
         public string TimeFinished { get; set; }
-       
-        public int AddCostume()
+
+        //Function to add amateur runner costume details
+        public int addCostume()
         {
-            string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
-            MySqlConnection con = new MySqlConnection(constr);
-            string insertQuery = "INSERT INTO runner_costume(runner_no,costume) VALUES(" + ParticipantId + ",'" + RunnerCostume + "') ON DUPLICATE KEY UPDATE costume ='"+RunnerCostume+"' ";
-            MySqlCommand cmd = new MySqlCommand(insertQuery);
-            cmd.Connection = con;
-            con.Open();
-            int status = cmd.ExecuteNonQuery();
-            if (status > 0)
+            try
             {
-                return 1;
-            }
-            else
+                string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
+                MySqlConnection con = new MySqlConnection(constr);
+                string insertQuery = "INSERT INTO runner_costume(runner_no,costume) VALUES(" + ParticipantId + ",'" + RunnerCostume + "') ON DUPLICATE KEY UPDATE costume ='" + RunnerCostume + "' ";
+                MySqlCommand cmd = new MySqlCommand(insertQuery);
+                cmd.Connection = con;
+                con.Open();
+                int status = cmd.ExecuteNonQuery();
+                if (status > 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            } 
+            catch (MySqlException ex)
             {
-                return 0;
+                return ex.Number;
             }
         }
+        //Function to update amateur runner status into finished. 
         public int updateRunnerStatus()
         {
-            string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
-            MySqlConnection con = new MySqlConnection(constr);
-            string updateQuery = "UPDATE participant_info set status='Finished',time_finished='"+TimeFinished+"' where id = "+ParticipantId;
-            MySqlCommand cmd = new MySqlCommand(updateQuery);
-            cmd.Connection = con;
-            con.Open();
-            int status = cmd.ExecuteNonQuery();
-            if (status > 0)
+            try
             {
-                return 1;
-            }
-            else
+                string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
+                MySqlConnection con = new MySqlConnection(constr);
+                string updateQuery = "UPDATE participant_info set status='Finished',time_finished='" + TimeFinished + "' where id = " + ParticipantId;
+                MySqlCommand cmd = new MySqlCommand(updateQuery);
+                cmd.Connection = con;
+                con.Open();
+                int status = cmd.ExecuteNonQuery();
+                if (status > 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            } 
+            catch (MySqlException ex)
             {
-                return 0;
+                return ex.Number;
             }
         }
+        
+        //Function to add amateur runner sponsorship details.
         public int addSponsorDetails()
         {
-            string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
-            MySqlConnection con = new MySqlConnection(constr);
-            string insertQuery = "INSERT INTO sponsors(runner_no,sponsor_name,amount) VALUES("+ParticipantId+",'"+SponsorName+"',"+SponsorshipAmount+")";
-            MySqlCommand cmd = new MySqlCommand(insertQuery);
-            cmd.Connection = con;
-            con.Open();
-            int status = cmd.ExecuteNonQuery();
-            if (status > 0)
+            try
             {
-                return 1;
+                string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
+                MySqlConnection con = new MySqlConnection(constr);
+                string insertQuery = "INSERT INTO sponsors(runner_no,sponsor_name,amount) VALUES(" + ParticipantId + ",'" + SponsorName + "'," + SponsorshipAmount + ")";
+                MySqlCommand cmd = new MySqlCommand(insertQuery);
+                cmd.Connection = con;
+                con.Open();
+                int status = cmd.ExecuteNonQuery();
+                if (status > 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
             }
-            else
+            catch(MySqlException ex)
             {
-                return 0;
+                return ex.Number;
             }
         }
+        
+        //Function to fetch a amateur runner's sponsorship details. 
         public List<AmateurRunner> getParticipantSponsorDetails()
         {
             List<AmateurRunner> AmateurRunnerInfoList = new List<AmateurRunner>();
@@ -94,6 +125,8 @@ namespace PrestonMarathonApp
 
             return AmateurRunnerInfoList;
         }
+        
+        //Function to fetch a single amateur runner details. This will return runner's basic info, status and costume details. 
         public List<AmateurRunner> getParticipantInfo()
         {
             List<AmateurRunner> AmateurRunnerInfoList = new List<AmateurRunner>();
@@ -142,41 +175,47 @@ namespace PrestonMarathonApp
             return AmateurRunnerInfoList;
 
         }
+        
+        //Function to get all amateur runner basic details for the listing window. 
         public List<AmateurRunner> getListOfParticipants()
         {
             List<AmateurRunner> AmateurRunnerInfoList = new List<AmateurRunner>();
-
-            string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
-            MySqlConnection con = new MySqlConnection(constr);
-            string selectQuery = "SELECT id,first_name,last_name,costume,status from participant_info LEFT JOIN runner_costume ON " +
-                "participant_info.id = runner_costume.runner_no where participant_info.participant_type='1'";
-            MySqlCommand cmd = new MySqlCommand(selectQuery);
-            cmd.Connection = con;
-            con.Open();
-            MySqlDataReader runnerInfo = cmd.ExecuteReader();
-
-            while (runnerInfo.Read())
+            try
             {
-                AmateurRunner amateurRunnerinfo = new AmateurRunner();
-                amateurRunnerinfo.ParticipantId = (int)runnerInfo[0];
-                amateurRunnerinfo.RunnerNo = "Runner" + runnerInfo.GetString(0);
-                amateurRunnerinfo.ParticpiantFirstName = runnerInfo.GetString(1);
-                amateurRunnerinfo.ParticpiantLastName = runnerInfo.GetString(2);
-                amateurRunnerinfo.ParticipationStatus = runnerInfo.GetString(4);
-                if (!DBNull.Value.Equals(runnerInfo["costume"]))
+                string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
+                MySqlConnection con = new MySqlConnection(constr);
+                string selectQuery = "SELECT id,name,last_name,costume,status from participant_info LEFT JOIN runner_costume ON " +
+                    "participant_info.id = runner_costume.runner_no where participant_info.participant_type='1' order by participant_info.id desc";
+                MySqlCommand cmd = new MySqlCommand(selectQuery);
+                cmd.Connection = con;
+                con.Open();
+                MySqlDataReader runnerInfo = cmd.ExecuteReader();
+
+                while (runnerInfo.Read())
                 {
-                    amateurRunnerinfo.RunnerCostume = runnerInfo.GetString(3);
-                }
-                else
-                {
-                    amateurRunnerinfo.RunnerCostume = "Not added";
+                    AmateurRunner amateurRunnerinfo = new AmateurRunner();
+                    amateurRunnerinfo.ParticipantId = (int)runnerInfo[0];
+                    amateurRunnerinfo.RunnerNo = "Runner" + runnerInfo.GetString(0);
+                    amateurRunnerinfo.ParticpiantFirstName = runnerInfo.GetString(1);
+                    amateurRunnerinfo.ParticpiantLastName = runnerInfo.GetString(2);
+                    amateurRunnerinfo.ParticipationStatus = runnerInfo.GetString(4);
+                    if (!DBNull.Value.Equals(runnerInfo["costume"]))
+                    {
+                        amateurRunnerinfo.RunnerCostume = runnerInfo.GetString(3);
+                    }
+                    else
+                    {
+                        amateurRunnerinfo.RunnerCostume = "Not added";
+                    }
+
+                    AmateurRunnerInfoList.Add(amateurRunnerinfo);
                 }
 
-                AmateurRunnerInfoList.Add(amateurRunnerinfo);
+                return AmateurRunnerInfoList;
+            } catch (MySqlException ex)
+            {
+                return AmateurRunnerInfoList;
             }
-
-            return AmateurRunnerInfoList;
-
         }
     }
 }

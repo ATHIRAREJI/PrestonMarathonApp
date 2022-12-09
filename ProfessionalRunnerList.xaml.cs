@@ -14,6 +14,9 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
+    /**
+     * Interaction logic for ProfessionalRunnerList.xaml
+     */
     public partial class ProfessionalRunnerList : Window
     {
         public ProfessionalRunnerList()
@@ -23,6 +26,7 @@ namespace PrestonMarathonApp
             ProfessionalRunnerListGrid.ItemsSource = professionalRunner.getListOfParticipants();
         }
 
+        //Function to upload professional runner status to finished.
         private void updateParticipantStatus(object sender, RoutedEventArgs e)
         {
             RunnerStatus runnerStatus = new RunnerStatus();
@@ -31,7 +35,9 @@ namespace PrestonMarathonApp
             runnerStatus.Show();
             this.Close();
         }
-        private void ViewDetails(object sender, RoutedEventArgs e)
+
+        //Function to load professional runner detail view window.  
+        private void viewDetails(object sender, RoutedEventArgs e)
         {
             var ParticipantId = (((Button)sender).Tag).ToString();
             ProfessionalRunner professionalRunner = new ProfessionalRunner();
@@ -54,7 +60,9 @@ namespace PrestonMarathonApp
             professionalRunnerDetails.Show();
             this.Close();
         }
-        private void AddRankPageLoad(object sender, RoutedEventArgs e)
+
+        //Function to load addRank window. 
+        private void addRankPageLoad(object sender, RoutedEventArgs e)
         {
             AddRank addRank = new AddRank();
             addRank.participantId.Text = (((Button)sender).Tag).ToString();
@@ -62,6 +70,7 @@ namespace PrestonMarathonApp
             this.Close();
         }
 
+        //Function to load and generate professional certificate. 
         private void generateCertificate(object sender, RoutedEventArgs e)
         {
             var ParticipantId = (((Button)sender).Tag).ToString();
@@ -75,7 +84,9 @@ namespace PrestonMarathonApp
             PrintDialog printDlg = new PrintDialog();
             printDlg.PrintVisual(participantCertificate, "Window Printing.");
         }
-        private void home_btn_Click(object sender, RoutedEventArgs e)
+
+        //Function to load homw window.
+        private void homeBtnClick(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
             mw.Show();

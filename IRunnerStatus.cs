@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PrestonMarathonApp
 {
+    /**
+     * IRunnerStatus interface contains an abstract calass for updating Runner status.
+     */
     internal interface IRunnerStatus
     {
         int updateRunnerStatus();

@@ -14,9 +14,9 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for VolunteeringInfoList.xaml
-    /// </summary>
+    /**
+     * Interaction logic for VolunteeringInfoList.xaml
+     */
     public partial class VolunteeringInfoList : Window
     {
         public VolunteeringInfoList()
@@ -25,7 +25,9 @@ namespace PrestonMarathonApp
             VolunteeringInfo volunteerinfo = new VolunteeringInfo();
             VolunteeringInfoGrid.ItemsSource = volunteerinfo.getVolunteeringInfo();
         }
-        private void home_btn_Click(object sender, RoutedEventArgs e)
+
+        //Function to load home window
+        private void homeBtnClick(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
             mw.Show();

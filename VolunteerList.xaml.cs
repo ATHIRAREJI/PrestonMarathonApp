@@ -14,9 +14,9 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for VolunteerList.xaml
-    /// </summary>
+    /**
+     *  Interaction logic for VolunteerList.xaml
+     */
     public partial class VolunteerList : Window
     {
         public VolunteerList()
@@ -25,6 +25,8 @@ namespace PrestonMarathonApp
             Volunteer volunteer = new Volunteer();
             VolunteerListGrid.ItemsSource = volunteer.getListOfParticipants();
         }
+
+        //Function to load and save volunteer certificate. 
         private void generateCertificate(object sender, RoutedEventArgs e)
         {
             var ParticipantId = (((Button)sender).Tag).ToString();
@@ -38,12 +40,16 @@ namespace PrestonMarathonApp
             PrintDialog printDlg = new PrintDialog();
             printDlg.PrintVisual(volunteerCertificate, "Window Printing.");
         }
-        private void home_btn_Click(object sender, RoutedEventArgs e)
+
+        //Function to load home window
+        private void homeBtnClick(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
             mw.Show();
             this.Close();
         }
+
+        //Function to load volunteer view detail window
         private void viewDetail(object sender, RoutedEventArgs e)
         {
             var ParticipantId = (((Button)sender).Tag).ToString();

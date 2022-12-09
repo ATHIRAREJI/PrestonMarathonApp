@@ -14,16 +14,17 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for AmateurRunnerDetails.xaml
-    /// </summary>
+    /**
+     * Interaction logic for AmateurRunnerDetails.xaml
+     */
     public partial class AmateurRunnerDetails : Window
     {
         public AmateurRunnerDetails()
         {
             InitializeComponent();
         }
-        private void amaterurListing(object sender, RoutedEventArgs e)
+        //Function to load amateur runner's listing page
+        private void loadAmaterurRunnerListing(object sender, RoutedEventArgs e)
         {
             AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
             amateurRunnerList.Show();

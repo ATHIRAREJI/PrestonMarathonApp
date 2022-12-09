@@ -63,14 +63,14 @@
                         <ComboBox Name="volType"  SelectedIndex="0" Width="650" Height="32" FontSize="18" Margin="19 5 5 5"></ComboBox> 
                     </StackPanel>
                     <StackPanel Grid.Row="7" Orientation="Horizontal">
-                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="25 15 50 0" Click="home_btn_Click" >
+                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="25 15 50 0" Click="homeBtnClick" >
                             <TextBlock FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center">Home</TextBlock>
                         </Button>
-                        <Button Width="175" Height="40" Style="{StaticResource buttonBlock}" Margin="18 15 50 0"  Click="SubmitRegistration">
+                        <Button Width="175" Height="40" Style="{StaticResource buttonBlock}" Margin="18 15 50 0"  Click="submitRegistration">
                             <TextBlock FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center">Submit</TextBlock>
                         </Button>
 
-                        <Button Name="go_to_list" Width="180" Height="40" Style="{StaticResource buttonBlock}" Margin="35 15 50 0"  Click="go_to_list_Click">
+                        <Button Name="go_to_list" Width="180" Height="40" Style="{StaticResource buttonBlock}" Margin="35 15 50 0"  Click="loadListing">
                             <TextBlock FontSize="20" FontWeight="SemiBold" HorizontalAlignment="Center">To List</TextBlock>
                         </Button>
                     </StackPanel>

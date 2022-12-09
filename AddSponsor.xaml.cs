@@ -14,17 +14,17 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for AddSponsor.xaml
-    /// </summary>
+    /**
+     * Interaction logic for AddSponsor.xaml
+     */
     public partial class AddSponsor : Window
     {
         public AddSponsor()
         {
             InitializeComponent();
         }
-
-        private void sponsorBtn_Click(object sender, RoutedEventArgs e)
+        //Function to add amateur runner's sponsor details.
+        private void addSponsorDetails(object sender, RoutedEventArgs e)
         {
             AmateurRunner amateurRunner = new AmateurRunner();
             amateurRunner.ParticipantId = Int32.Parse(participantId.Text);
@@ -35,7 +35,9 @@ namespace PrestonMarathonApp
                 MessageBox.Show("Sponsor details has been added successfully");
             }
         }
-        private void amaterurListing(object sender, RoutedEventArgs e)
+
+        //Function to load amateur runner listing window
+        private void loadAmateurRunnerListing(object sender, RoutedEventArgs e)
         {
             AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
             amateurRunnerList.Show();

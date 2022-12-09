@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace PrestonMarathonApp
 {
+    /**
+     * ICostume interface contain an abstract method for addingCostume.
+     */
     internal interface ICostume
     {
-        int AddCostume();
+        int addCostume();
     }
 }

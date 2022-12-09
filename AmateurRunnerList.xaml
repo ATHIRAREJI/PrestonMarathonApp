@@ -48,24 +48,24 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button Name="add_sponsor" Click="AddSponsor" Tag="{Binding ParticipantId}" Style="{StaticResource gridSponsorButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                            <Button Name="add_sponsor" Click="addSponsor" Tag="{Binding ParticipantId}" Style="{StaticResource gridSponsorButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                                                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Sponsor</TextBlock>
                                             </Button>
-                                            <Button Name="add_costume" Tag="{Binding ParticipantId}" Click="AddCostume" Style="{StaticResource gridCostumeButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                            <Button Name="add_costume" Tag="{Binding ParticipantId}" Click="addCostume" Style="{StaticResource gridCostumeButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                                                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Costume</TextBlock>
                                             </Button>
                                             <Button Name="update_status" Click="updateParticipantStatus" Tag="{Binding ParticipantId}" Style="{StaticResource gridStatusButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                                                 <fa:FontAwesome Icon="FlagCheckered" ToolTip="Update runner status"/>
                                             </Button>
-                                            <Button Name="ViewDetails" Click="ViewDetails" Tag="{Binding ParticipantId}" Style="{StaticResource gridViewButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                            <Button Name="ViewDetails" Click="viewDetails" Tag="{Binding ParticipantId}" Style="{StaticResource gridViewButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                                                 <fa:FontAwesome Icon="Eye" ToolTip="View Runner Details"/>
                                             </Button>
                                             <Button Name="generateCertificate" Style="{StaticResource downloadCertificate}" Click="generateCertificate" Tag="{Binding ParticipantId}"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                                                 <fa:FontAwesome Icon="Download" ToolTip="Download Certificate"/>
                                             </Button>
-                                        </StackPanel>
-                                        
-                                    </DataTemplate>
+                                            </StackPanel> AddSponsor
+
+                                        </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
@@ -73,7 +73,7 @@
                     </DataGrid>
                     </Border>
                     <Border Grid.Row="2" HorizontalAlignment="Right">
-                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="70 0 50 0" Click="home_btn_Click" >
+                        <Button Width="150" Name="home_btn" Height="40" Style="{StaticResource buttonBlock}" Margin="70 0 50 0" Click="homeBtnClick" >
                             <TextBlock FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center">Home</TextBlock>
                         </Button>
                     </Border>

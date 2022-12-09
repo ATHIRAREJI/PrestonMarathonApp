@@ -14,21 +14,22 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for AddRank.xaml
-    /// </summary>
+    /**
+     * Interaction logic of AddRank.xaml
+     */
     public partial class AddRank : Window
     {
         public AddRank()
         {
             InitializeComponent();
         }
-        private void AddRunnerRank(object sender, RoutedEventArgs e)
+        //Function to save professional runner's rank data
+        private void addRunnerRankData(object sender, RoutedEventArgs e)
         {
             ProfessionalRunner professionalRunner = new ProfessionalRunner();
             professionalRunner.ParticipantId = Int32.Parse(participantId.Text);
             professionalRunner.RunnerRank = RunnerRank.Text;
-            if(professionalRunner.AddRunnerRank() == 1)
+            if(professionalRunner.addRunnerRank() == 1)
             {
                 ProfessionalRunnerList professionalRunnerList = new ProfessionalRunnerList();
                 professionalRunnerList.Show();

@@ -111,7 +111,7 @@
                                     <DataGridTextColumn Width="*" Header="Sponsorship Amount" Binding="{Binding SponsorshipAmount}"></DataGridTextColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
-                            <Button Width="150" Name="home_btn" Height="35" Style="{StaticResource buttonBlock}" Margin="70 0 50 0" Click="amaterurListing" HorizontalAlignment="Right" >
+                            <Button Width="150" Name="home_btn" Height="35" Style="{StaticResource buttonBlock}" Margin="70 0 50 0" Click="loadAmaterurRunnerListing" HorizontalAlignment="Right" >
                                 <TextBlock FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center">Back to List</TextBlock>
                             </Button>
                         </StackPanel>

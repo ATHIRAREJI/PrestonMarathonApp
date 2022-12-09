@@ -14,9 +14,9 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for RunnerStatus.xaml
-    /// </summary>
+    /**
+     *  Interaction logic for RunnerStatus.xaml
+     */
     public partial class RunnerStatus : Window
     {
         public RunnerStatus()
@@ -24,6 +24,7 @@ namespace PrestonMarathonApp
             InitializeComponent();
         }
 
+        //Function to update runner status into finished. This is a common function for both professional and amateur runner.
         private void updateRunnerStatus(object sender, RoutedEventArgs e)
         {
             

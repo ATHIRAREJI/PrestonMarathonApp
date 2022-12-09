@@ -14,15 +14,17 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for ProfessionalRunnerDetails.xaml
-    /// </summary>
+    /**
+     * Interaction logic for ProfessionalRunnerDetails.xaml
+     */
     public partial class ProfessionalRunnerDetails : Window
     {
         public ProfessionalRunnerDetails()
         {
             InitializeComponent();
         }
+
+        //Function to load professional runner listing window
         private void backtoList(object sender, RoutedEventArgs e)
         {
            ProfessionalRunnerList professionalRunnerList = new ProfessionalRunnerList();

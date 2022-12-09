@@ -14,23 +14,23 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for AddCostume.xaml
-    /// </summary>
+    /**
+     * Interaction logic of AddCostume.xaml
+     */
     public partial class AddCostume : Window
     {
         public AddCostume()
         {
             InitializeComponent();
         }
-
-        private void AddCostumeDetails_Click(object sender, RoutedEventArgs e)
+        //Function to save amateur runner's costume details. 
+        private void loadCostumeDetailWindow(object sender, RoutedEventArgs e)
         {
             AmateurRunner runner = new AmateurRunner();
             runner.ParticipantId = Int32.Parse(participantId.Text);
             runner.RunnerCostume = costumeDetails.Text;
 
-            if (runner.AddCostume() ==  1)
+            if (runner.addCostume() ==  1)
             {
                 AmateurRunnerList amateurRunnerList = new AmateurRunnerList();
                 amateurRunnerList.Show();

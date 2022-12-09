@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PrestonMarathonApp
 {
+    /**
+     * IVolunteer interface contains properities for both volunteer and volunteerInfo
+     */
     internal interface IVolunteer
     {
         int VolTypeId { get; set; }

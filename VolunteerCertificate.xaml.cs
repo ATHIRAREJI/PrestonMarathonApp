@@ -14,9 +14,9 @@ using System.Windows.Shapes;
 
 namespace PrestonMarathonApp
 {
-    /// <summary>
-    /// Interaction logic for VolunteerCertificate.xaml
-    /// </summary>
+    /**
+     * Interaction logic for VolunteerCertificate.xaml
+     */
     public partial class VolunteerCertificate : Window
     {
         public VolunteerCertificate()
