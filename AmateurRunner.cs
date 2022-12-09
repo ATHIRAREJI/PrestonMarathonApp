@@ -184,7 +184,7 @@ namespace PrestonMarathonApp
             {
                 string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
                 MySqlConnection con = new MySqlConnection(constr);
-                string selectQuery = "SELECT id,name,last_name,costume,status from participant_info LEFT JOIN runner_costume ON " +
+                string selectQuery = "SELECT id,first_name,last_name,costume,status from participant_info LEFT JOIN runner_costume ON " +
                     "participant_info.id = runner_costume.runner_no where participant_info.participant_type='1' order by participant_info.id desc";
                 MySqlCommand cmd = new MySqlCommand(selectQuery);
                 cmd.Connection = con;
@@ -211,8 +211,9 @@ namespace PrestonMarathonApp
                     AmateurRunnerInfoList.Add(amateurRunnerinfo);
                 }
 
-                return AmateurRunnerInfoList;
-            } catch (MySqlException ex)
+             return AmateurRunnerInfoList;
+            } 
+            catch (MySqlException ex)
             {
                 return AmateurRunnerInfoList;
             }
