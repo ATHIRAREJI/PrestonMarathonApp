@@ -26,12 +26,12 @@
             <!--Dashboardsection-->
             <Border Grid.Column="1" Background="white" Margin="25 10 15 20" CornerRadius="10">
                 <StackPanel Margin="15 40 0 15">
-                    <TextBlock Style="{StaticResource displayPageHeading}" HorizontalAlignment="Center" Margin="0 15 0 15">PROFESSIONAL RUNNER INFO</TextBlock>
+                    <TextBlock Style="{StaticResource displayPageHeading}" HorizontalAlignment="Center" Margin="0 15 0 15">VOLUNTEER INFO</TextBlock>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
+
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>

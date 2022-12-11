@@ -28,7 +28,7 @@ namespace PrestonMarathonApp
         private void addVolunteeringInfo(object sender, RoutedEventArgs e)
         {
             VolunteeringInfo volunteeringInfo = new VolunteeringInfo();
-            volunteeringInfo.VolunteeringType = VolunteeringType.Text;
+            volunteeringInfo.VolunteeringType = VolunteeringType.Text.Trim();
             volunteeringInfo.StartTime = StartTime.Text;
             volunteeringInfo.EndTime = EndTime.Text;
             if(volunteeringInfo.addVolunteeringInfo() == 1)

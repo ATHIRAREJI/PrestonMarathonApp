@@ -83,8 +83,15 @@ namespace PrestonMarathonApp
                     profRunnerinfo.ParticpiantEmail = runnerInfo.GetString(5);
                     profRunnerinfo.ParticpiantPhone = runnerInfo.GetString(6);
                     profRunnerinfo.ParticpiantAddress = runnerInfo.GetString(7);
-                    profRunnerinfo.TimeFinished = runnerInfo.GetString(8);
 
+                    if (!DBNull.Value.Equals(runnerInfo["time_finished"]))
+                    {
+                        profRunnerinfo.TimeFinished = runnerInfo.GetString(8);
+                    }
+                    else
+                    {
+                        profRunnerinfo.TimeFinished = "Will be added only after the Marathon";
+                    }
                     ProfessionalRunnerInfoList.Add(profRunnerinfo);
                 }
 
@@ -106,7 +113,7 @@ namespace PrestonMarathonApp
                 string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
                 MySqlConnection con = new MySqlConnection(constr);
                 string selectQuery = "SELECT id,first_name,last_name,status,runner_rank from participant_info LEFT JOIN runner_rank ON " +
-                    "participant_info.id = runner_rank.runner_no where participant_info.participant_type='2'";
+                    "participant_info.id = runner_rank.runner_no where participant_info.participant_type='2' order by participant_info.id desc";
                 MySqlCommand cmd = new MySqlCommand(selectQuery);
                 cmd.Connection = con;
                 con.Open();

@@ -28,7 +28,7 @@ namespace PrestonMarathonApp
                 string constr = ConfigurationManager.ConnectionStrings["MySQLConnection"].ConnectionString;
                 MySqlConnection con = new MySqlConnection(constr);
                 string getRunnerInfo = "SELECT participant_info.id,first_name,last_name,email,phone,address,participant_info.participant_type,start_time,end_time from participant_info LEFT JOIN volunteer_info ON " +
-                    "participant_info.participant_type = volunteer_info.volunteering_type where participant_info.participant_type not in ('1','2') AND participant_info.id =" + ParticipantId;
+                    "participant_info.participant_type=volunteering_type where participant_info.id ="+ParticipantId;
 
                 MySqlCommand cmd = new MySqlCommand(getRunnerInfo);
                 cmd.Connection = con;

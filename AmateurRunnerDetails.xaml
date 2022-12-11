@@ -10,7 +10,7 @@
     <Border CornerRadius="25" Padding="20" Background="#f7f6f4">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="500"></ColumnDefinition>
+                <ColumnDefinition Width="380"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
@@ -24,7 +24,7 @@
             </Border>
 
             <!--Dashboardsection-->
-            <Border Grid.Column="1" Background="white" CornerRadius="8" Margin="25 10 10 20">
+            <Border Grid.Column="1" Background="white" CornerRadius="8" Margin="25 10 10 0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="460"></RowDefinition>
